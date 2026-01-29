@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://xoq51d881olg"]
+
+[node name="StaticSpike" type="StaticBody2D" unique_id=1653799789]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1796658238]
+polygon = PackedVector2Array(0, 384, 128, 384, 192, 320, 256, 384, 384, 384, 384, 448, 0, 448)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1888112674]
+color = Color(1, 0.08627451, 1, 1)
+polygon = PackedVector2Array(0, 384, 128, 384, 192, 320, 256, 384, 384, 384, 384, 448, 0, 448)

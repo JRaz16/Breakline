@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dlnhugdmyu68"]
+
+[ext_resource type="Script" uid="uid://dsn43iiylun6s" path="res://Scripts/shapey.gd" id="1_pf54y"]
+[ext_resource type="Texture2D" uid="uid://c5dtcy3ojlaie" path="res://Art/Sprites/Characters/Default/character_purple_front.png" id="2_7akww"]
+
+[node name="Shapey" type="CharacterBody2D" unique_id=214953989]
+script = ExtResource("1_pf54y")
+metadata/_edit_group_ = true
+
+[node name="ShapeyCollision" type="CollisionPolygon2D" parent="." unique_id=71253058]
+polygon = PackedVector2Array(-24, -16, -24, 56, 16, 56, 16, -16)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=681278660]
+texture = ExtResource("2_7akww")
