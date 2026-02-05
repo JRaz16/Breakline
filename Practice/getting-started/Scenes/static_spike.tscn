@@ -8,4 +8,4 @@ polygon = PackedVector2Array(0, 384, 128, 384, 192, 320, 256, 384, 384, 384, 384
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1888112674]
 color = Color(1, 0.08627451, 1, 1)
-polygon = PackedVector2Array(0, 384, 128, 384, 192, 320, 256, 384, 384, 384, 384, 448, 0, 448)
+polygon = PackedVector2Array(0, 8, 184, 8, 184, 640, 0, 640)
