@@ -1,17 +1,22 @@
 class_name Player2D
 extends CharacterBody2D
 ## Simple player behavior for a side-scrolling platformer
+
+## Sent whenever the player collects coins
+signal collected(coins:int)
+
 ##Player walk speed in pixels/sec.
 @export_range(0, 1000, 10) var SPEED: float = 300.0
 ##Vertical Jump speed in pixels/sec.
 @export_range(-1000, 0, 10) var JUMP_VELOCITY: float = -400.0
 
+var coins_collected:int = 0
 var direction: float = 0
 var is_falling:bool = false
 
-func jump():
+func jump(height: int = JUMP_VELOCITY):
 	print("Jump Pressed")
-	velocity.y = JUMP_VELOCITY
+	velocity.y = height
 	$Avatar.play("jump")
 		
 func move():
@@ -62,9 +67,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_avatar_animation_finished() -> void:
 	if $Avatar.animation == "crouch":
-		jump()
-		is_falling = true
+		jump() 
 		
 	if $Avatar.animation == "landed":
 		$Avatar.play("idle")
 		
+
+
+func _on_poi_body_entered(body: Node2D) -> void:
+	if body == self:
+		print("Goal Reached")
+		jump(-2500)
+	

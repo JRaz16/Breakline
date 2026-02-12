@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bcunteybxioc7"]
+
+[ext_resource type="Texture2D" uid="uid://3nqmjssugil8" path="res://Art/Sprites/Tiles/Double/spring.png" id="1_0k0x6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rvs0"]
+size = Vector2(128, 128)
+
+[node name="POI" type="Area2D" unique_id=923734734]
+
+[node name="Detector" type="CollisionShape2D" parent="." unique_id=378257242]
+shape = SubResource("RectangleShape2D_7rvs0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420441101]
+texture = ExtResource("1_0k0x6")
