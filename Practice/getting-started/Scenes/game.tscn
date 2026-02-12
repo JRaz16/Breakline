@@ -2,13 +2,21 @@
 
 [ext_resource type="PackedScene" uid="uid://b36pm53k5107g" path="res://Scenes/level_1.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://5jyc6ybnxi4i" path="res://Scenes/hud.tscn" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://dybs64cirkeea" path="res://Scripts/game.gd" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://bcunteybxioc7" path="res://Scenes/poi.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node" unique_id=1618287267]
+script = ExtResource("1_wrm1d")
 
 [node name="HUD" parent="." unique_id=1317784640 instance=ExtResource("1_qxrlw")]
 
 [node name="Level 1" parent="." unique_id=384316881 instance=ExtResource("1_ebmjs")]
 
+[node name="POI2" parent="Level 1" unique_id=923734734 instance=ExtResource("4_3dryh")]
+position = Vector2(-1088, 6888)
+
 [connection signal="collected" from="Level 1/Player2D" to="HUD" method="_on_player_2d_collected"]
+[connection signal="body_entered" from="Level 1/POI" to="." method="_on_poi_body_entered"]
+[connection signal="body_entered" from="Level 1/POI2" to="." method="_on_poi_body_entered"]
 
 [editable path="Level 1"]

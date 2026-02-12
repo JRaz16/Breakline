@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcunteybxioc7"]
 
-[ext_resource type="Texture2D" uid="uid://3nqmjssugil8" path="res://Art/Sprites/Tiles/Double/spring.png" id="1_0k0x6"]
+[ext_resource type="Texture2D" uid="uid://cvu4mcevk2xbb" path="res://Art/Sprites/Tiles/Double/sign.png" id="1_nv7ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rvs0"]
 size = Vector2(128, 128)
@@ -11,4 +11,4 @@ size = Vector2(128, 128)
 shape = SubResource("RectangleShape2D_7rvs0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=420441101]
-texture = ExtResource("1_0k0x6")
+texture = ExtResource("1_nv7ci")

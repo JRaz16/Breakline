@@ -81,11 +81,10 @@ height = 80.0
 
 [node name="Player2D" type="CharacterBody2D" unique_id=1843051399]
 script = ExtResource("1_ujftu")
-SPEED = 500.0
 
 [node name="Avatar" type="AnimatedSprite2D" parent="." unique_id=742540858]
 sprite_frames = SubResource("SpriteFrames_vxxpg")
-animation = &"crouch"
+animation = &"idle"
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1312828735]
 position = Vector2(0, 22)

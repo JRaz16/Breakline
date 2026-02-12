@@ -74,8 +74,9 @@ func _on_avatar_animation_finished() -> void:
 		
 
 
-func _on_poi_body_entered(body: Node2D) -> void:
-	if body == self:
-		print("Goal Reached")
-		jump(-2500)
+
+func _on_spring_body_entered(body: Node2D) -> void:
+		if body == self:
+			print("Goal Reached")
+			jump(-2000)
 	
