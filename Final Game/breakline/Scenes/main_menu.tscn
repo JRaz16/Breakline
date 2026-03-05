@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cur6lfx88cvia"]
+
+[ext_resource type="Script" uid="uid://b7ysgtmw3q0nn" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="FontFile" uid="uid://c7txjskje61j3" path="res://Fonts/Dash-Horizon-Demo.otf" id="2_ce3w2"]
+[ext_resource type="Theme" uid="uid://conrkn6n1khfk" path="res://Themes/new_theme.tres" id="3_n45e2"]
+
+[node name="MainMenu" type="Node2D" unique_id=1073069888]
+script = ExtResource("1_1ehe0")
+
+[node name="Title" type="Label" parent="." unique_id=1561640004]
+offset_right = 1920.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0.49411765, 0.99607843, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -28
+theme_override_constants/shadow_offset_y = 24
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_ce3w2")
+theme_override_font_sizes/font_size = 300
+text = "BreakLine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1705047211]
+offset_top = 450.0
+offset_right = 1920.0
+offset_bottom = 1030.0
+theme = ExtResource("3_n45e2")
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=964114490]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="play" type="Button" parent="CenterContainer/MainButtons" unique_id=479363037]
+layout_mode = 2
+text = "PLAY"
+
+[node name="settings" type="Button" parent="CenterContainer/MainButtons" unique_id=127192155]
+layout_mode = 2
+text = " SETTINGS "
+
+[node name="credits" type="Button" parent="CenterContainer/MainButtons" unique_id=773413040]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="quit" type="Button" parent="CenterContainer/MainButtons" unique_id=1762219035]
+layout_mode = 2
+text = "QUIT
+"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=920923221]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="back" type="Button" parent="CenterContainer/SettingsMenu" unique_id=1110783015]
+custom_minimum_size = Vector2(353, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = "BACK"
+
+[node name="fullscreen" type="CheckBox" parent="CenterContainer/SettingsMenu" unique_id=1104106759]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Fullscreen"
+alignment = 1
+
+[node name="mainvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=485058017]
+custom_minimum_size = Vector2(484, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/mainvolslider" unique_id=1696590321]
+custom_minimum_size = Vector2(480, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 484.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 40
+text = "MAIN VOLUME"
+horizontal_alignment = 1
+
+[node name="musicvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=12793232]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/musicvolslider" unique_id=1199491847]
+custom_minimum_size = Vector2(484, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 484.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 40
+text = "MUSIC VOLUME"
+horizontal_alignment = 1
+
+[node name="sfxvolslider" type="HSlider" parent="CenterContainer/SettingsMenu" unique_id=1590309358]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="CenterContainer/SettingsMenu/sfxvolslider" unique_id=1901709576]
+custom_minimum_size = Vector2(484, 55)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 484.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 40
+text = "SFX VOLUME"
+horizontal_alignment = 1
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1283961363]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="CenterContainer/CreditsMenu" unique_id=1731096395]
+custom_minimum_size = Vector2(1500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Game Made by John Rasizzi
+Character Model Made by Irene Makrinos"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="CenterContainer/CreditsMenu" unique_id=2034639510]
+custom_minimum_size = Vector2(353, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = "BACK"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1658890459]
+z_index = -4096
+offset_left = -158.0
+offset_top = -85.0
+offset_right = 2109.0
+offset_bottom = 1198.0
+mouse_filter = 2
+
+[connection signal="pressed" from="CenterContainer/MainButtons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="CenterContainer/SettingsMenu/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/mainvolslider" to="." method="_on_mainvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/musicvolslider" to="." method="_on_musicvolslider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/sfxvolslider" to="." method="_on_sfxvolslider_value_changed"]
+[connection signal="pressed" from="CenterContainer/CreditsMenu/back" to="." method="_on_back_pressed"]

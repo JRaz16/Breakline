@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cb0op2whwextg"]
+
+[ext_resource type="Material" uid="uid://23ptjp877e58" path="res://Materials/painted_plaster_wall.res" id="1_ywqlo"]
+[ext_resource type="Material" uid="uid://b04sxnhos5fvh" path="res://Materials/concrete_tiles_02.res" id="2_dfrhq"]
+[ext_resource type="Material" uid="uid://fdx6yjtfayq3" path="res://Materials/MetalPlates_008.tres" id="3_ttkfw"]
+[ext_resource type="Material" uid="uid://dp2iwbk6t6n6n" path="res://Materials/Metal_028.tres" id="4_gojii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywqlo"]
+size = Vector3(40, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfrhq"]
+size = Vector3(1, 2.5, 38)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hefa"]
+size = Vector3(40, 405, 40)
+
+[node name="Building" type="StaticBody3D" unique_id=739560705]
+collision_layer = 2
+collision_mask = 3
+
+[node name="BuildingBase" type="CSGBox3D" parent="." unique_id=1605637215]
+size = Vector3(40, 402.5, 40)
+material = ExtResource("1_ywqlo")
+
+[node name="Rooftop" type="CSGBox3D" parent="." unique_id=33789202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+size = Vector3(38, 5, 38)
+material = ExtResource("2_dfrhq")
+
+[node name="MetalRim" type="CSGBox3D" parent="." unique_id=733879873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 0)
+size = Vector3(1, 2.5, 38)
+material = ExtResource("3_ttkfw")
+
+[node name="MetalRim4" type="CSGBox3D" parent="." unique_id=1952810004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, 19.5)
+size = Vector3(38, 2.5, 1)
+material = ExtResource("3_ttkfw")
+
+[node name="MetalRim2" type="CSGBox3D" parent="." unique_id=1044361579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 0)
+size = Vector3(1, 2.5, 38)
+material = ExtResource("3_ttkfw")
+
+[node name="MetalRim3" type="CSGBox3D" parent="." unique_id=1906450799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, -19.5)
+size = Vector3(38, 2.5, 1)
+material = ExtResource("3_ttkfw")
+
+[node name="MetalBox" type="CSGBox3D" parent="." unique_id=861924280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_gojii")
+
+[node name="MetalBox2" type="CSGBox3D" parent="." unique_id=1746890020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, -19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_gojii")
+
+[node name="MetalBox3" type="CSGBox3D" parent="." unique_id=1960773216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, -19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_gojii")
+
+[node name="MetalBox4" type="CSGBox3D" parent="." unique_id=2042263630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_gojii")
+
+[node name="Rim Collision" type="CollisionShape3D" parent="." unique_id=364505753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, -19.5)
+shape = SubResource("BoxShape3D_ywqlo")
+debug_color = Color(0, 0.5950001, 0.7, 0.73333335)
+
+[node name="Rim Collision2" type="CollisionShape3D" parent="." unique_id=1106943104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, 19.5)
+shape = SubResource("BoxShape3D_ywqlo")
+debug_color = Color(0, 0.5950001, 0.7, 0.73333335)
+
+[node name="Rim Collision3" type="CollisionShape3D" parent="." unique_id=355792543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 0)
+shape = SubResource("BoxShape3D_dfrhq")
+
+[node name="Rim Collision4" type="CollisionShape3D" parent="." unique_id=32155443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 0)
+shape = SubResource("BoxShape3D_dfrhq")
+
+[node name="Roof_Building Collision" type="CollisionShape3D" parent="." unique_id=128439642]
+visible = false
+shape = SubResource("BoxShape3D_2hefa")

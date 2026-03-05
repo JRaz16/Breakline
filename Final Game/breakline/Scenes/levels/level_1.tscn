@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://2w3bq6e12g3i"]
+
+[ext_resource type="PackedScene" uid="uid://yhdgkllsra7l" path="res://Scenes/UI.tscn" id="1_0lml3"]
+[ext_resource type="PackedScene" uid="uid://cb0op2whwextg" path="res://Scenes/Objects/building.tscn" id="1_qyddi"]
+[ext_resource type="PackedScene" uid="uid://ch55btgj128s" path="res://Scenes/player.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://yp2hccbphx70" path="res://Scenes/Objects/wall.tscn" id="3_yffda"]
+[ext_resource type="PackedScene" uid="uid://de8164ovvfugu" path="res://Scenes/Objects/goal_ring.tscn" id="4_cru1l"]
+[ext_resource type="PackedScene" uid="uid://dfmqm70ds3r0c" path="res://Scenes/Objects/ramp.tscn" id="6_qyddi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k5f4k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6phgx"]
+sky_material = SubResource("ProceduralSkyMaterial_k5f4k")
+
+[sub_resource type="Environment" id="Environment_81xng"]
+background_mode = 2
+sky = SubResource("Sky_6phgx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lml3"]
+size = Vector3(10000, 1, 10000)
+
+[node name="World" type="Node3D" unique_id=776203393]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1858276007]
+environment = SubResource("Environment_81xng")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1196746431]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Buildings" type="Node" parent="." unique_id=428614572]
+
+[node name="Building2" parent="Buildings" unique_id=2070438661 instance=ExtResource("1_qyddi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.83725, -215.91632, 30)
+
+[node name="Building3" parent="Buildings" unique_id=739560705 instance=ExtResource("1_qyddi")]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 179.04535, -215.91632, 4.506897)
+
+[node name="Building" parent="Buildings" unique_id=1488001484 instance=ExtResource("1_qyddi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -202.5, 0)
+
+[node name="Building4" parent="Buildings" unique_id=1109437764 instance=ExtResource("1_qyddi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 45.171883, -204.1716, -10.655624)
+
+[node name="Building5" parent="Buildings" unique_id=924506237 instance=ExtResource("1_qyddi")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.8, 87.027, -207.04886, -1.532898)
+
+[node name="Wall" parent="." unique_id=1241431369 instance=ExtResource("3_yffda")]
+transform = Transform3D(-8.742278e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 2, -4.371139e-08, 1.9106855e-15, 38.15293, 4.6108313, -12.209739)
+
+[node name="Player" parent="." unique_id=33635978 instance=ExtResource("1_tumq0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1815732, 1.6445246, 2.7789583)
+collision_mask = 3
+
+[node name="Goal Ring" parent="." unique_id=175029579 instance=ExtResource("4_cru1l")]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 181.62605, -10.686207, 5.0961037)
+
+[node name="Ramp" parent="." unique_id=802551932 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 16.550968, 0.5853684, -7.5730095)
+
+[node name="Ramp3" parent="." unique_id=158587780 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 61.72285, -1.0862398, -4.137458)
+
+[node name="Ramp4" parent="." unique_id=438998137 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 94.097916, -3.9620376, 9.7566185)
+
+[node name="Ramp2" parent="." unique_id=1500192495 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 146.4105, -12.877205, 19.492304)
+
+[node name="UI" parent="." unique_id=660830866 instance=ExtResource("1_0lml3")]
+offset = Vector2(895, 700)
+transform = Transform2D(1, 0, 0, 1, 895, 700)
+
+[node name="DeathPlane" type="Area3D" parent="." unique_id=1713100506]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathPlane" unique_id=974308427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+shape = SubResource("BoxShape3D_0lml3")
+
+[connection signal="body_entered" from="Goal Ring" to="Player" method="_on_goal_ring_body_entered"]
+[connection signal="body_entered" from="DeathPlane" to="Player" method="_on_death_plane_body_entered"]

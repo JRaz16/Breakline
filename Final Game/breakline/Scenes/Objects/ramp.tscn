@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dfmqm70ds3r0c"]
+
+[ext_resource type="Material" uid="uid://cmyuh427sd8su" path="res://Materials/plywood.res" id="1_qf3xy"]
+[ext_resource type="Material" uid="uid://j0sxf1tpbst1" path="res://Materials/brown_planks_09.res" id="2_esgd0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q4ife"]
+size = Vector3(5, 0.01, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esgd0"]
+size = Vector3(0.4, 0.9, 2)
+
+[node name="Ramp" type="StaticBody3D" unique_id=802551932]
+metadata/_edit_group_ = true
+
+[node name="Top" type="CSGBox3D" parent="." unique_id=920706391]
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(5, 0.01, 2)
+material = ExtResource("1_qf3xy")
+
+[node name="Block" type="CSGBox3D" parent="." unique_id=1831244506]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -1.8, -0.14, 0)
+size = Vector3(1.2, 0.9, 2)
+material = ExtResource("2_esgd0")
+
+[node name="Ramp Collision" type="CollisionShape3D" parent="." unique_id=1259580579]
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_q4ife")
+
+[node name="Base Collision" type="CollisionShape3D" parent="." unique_id=26288646]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -2.2, -0.15, 0)
+shape = SubResource("BoxShape3D_esgd0")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cpvvg650xgi4n"]
+
+[ext_resource type="Script" uid="uid://66gfthbb1wel" path="res://scripts/characters/Hero.gd" id="1_8gges"]
+[ext_resource type="Script" uid="uid://vo6nrkoty7ky" path="res://scripts/characters/CharacterStats.gd" id="2_e6dp4"]
+[ext_resource type="Texture2D" uid="uid://bo3naihxumg6l" path="res://art/characters/buttonRound_blue.png" id="2_xklha"]
+
+[sub_resource type="Resource" id="Resource_52fy0"]
+script = ExtResource("2_e6dp4")
+metadata/_custom_type_script = "uid://vo6nrkoty7ky"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h46b4"]
+radius = 16.0
+
+[node name="Hero" type="CharacterBody2D" unique_id=328333112]
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_8gges")
+stats = SubResource("Resource_52fy0")
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1059830984]
+shape = SubResource("CircleShape2D_h46b4")
+
+[node name="Avatar" type="Sprite2D" parent="." unique_id=780349856]
+texture = ExtResource("2_xklha")
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AttackOrigin" type="Node2D" parent="." unique_id=971396934]
+position = Vector2(16, 0)

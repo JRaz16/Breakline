@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://conrkn6n1khfk"]
+
+[ext_resource type="FontFile" uid="uid://cjatxn0bflkuf" path="res://Fonts/Chopsic.otf" id="1_ju0yn"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.49411765, 0.99607843, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.65, 0, 1)
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 75
+Button/fonts/font = ExtResource("1_ju0yn")

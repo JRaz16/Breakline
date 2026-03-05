@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpvvg650xgi4n"]
+
+[ext_resource type="Script" path="res://scripts/characters/Hero.gd" id="1_8gges"]
+[ext_resource type="Texture2D" uid="uid://bo3naihxumg6l" path="res://art/characters/buttonRound_blue.png" id="2_xklha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h46b4"]
+radius = 16.0
+
+[node name="Hero" type="CharacterBody2D"]
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_8gges")
+
+[node name="Avatar" type="Sprite2D" parent="."]
+texture = ExtResource("2_xklha")
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h46b4")
+
+[node name="AttackOrigin" type="Node2D" parent="."]
+position = Vector2(16, 0)

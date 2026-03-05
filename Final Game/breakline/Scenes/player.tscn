@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ch55btgj128s"]
+
+[ext_resource type="Script" uid="uid://bjeq5ia6r3stm" path="res://Scripts/player_movement.gd" id="1_v0iea"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v0iea"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
+height = 1.0
+
+[node name="Player" type="CharacterBody3D" unique_id=33635978]
+script = ExtResource("1_v0iea")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1790641663]
+mesh = SubResource("CapsuleMesh_v0iea")
+
+[node name="StandingCollisionShape3D" type="CollisionShape3D" parent="." unique_id=84715934]
+shape = SubResource("CapsuleShape3D_f60y1")
+
+[node name="CrouchingCollisionShape3D" type="CollisionShape3D" parent="." unique_id=431625477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39501953, 0)
+shape = SubResource("CapsuleShape3D_v0iea")
+disabled = true
+
+[node name="Neck" type="Node3D" parent="." unique_id=1126930796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.510805, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck" unique_id=805291561]

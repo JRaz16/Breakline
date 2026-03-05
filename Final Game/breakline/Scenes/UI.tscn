@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://yhdgkllsra7l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaii"]
+bg_color = Color(0.16470589, 0.34117648, 0.34117648, 0.49019608)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w371h"]
+bg_color = Color(0.49019608, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="UI" type="CanvasLayer" unique_id=660830866]
+
+[node name="Control" type="Control" parent="." unique_id=236739676]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DashMeter" type="ProgressBar" parent="Control" unique_id=1214260484]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 10.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3iaii")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w371h")
+max_value = 1.0
+value = 1.0
+show_percentage = false
