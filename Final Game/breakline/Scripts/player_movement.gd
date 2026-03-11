@@ -5,7 +5,7 @@ var SPEED := 10.0
 var STRAFE_SPEED := 6.0
 var GROUND_ACCEL := 15.0
 var GROUND_FRICTION := 30.0
-var AIR_ACCEL := 6.0
+var AIR_ACCEL := 7.0
 var AIR_CONTROL := 0.3
 const JUMP_VELOCITY := 5.0
 
@@ -72,8 +72,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * Settings.mouse_sensitivity)
-			camera.rotate_x(-event.relative.y * Settings.mouse_sensitivity)
+			neck.rotate_y(-event.relative.x * Settings.mouse_sensitivity/10)
+			camera.rotate_x(-event.relative.y * Settings.mouse_sensitivity/10)
 			if not is_rolling:
 				camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 
