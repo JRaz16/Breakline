@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5jyc6ybnxi4i" path="res://Scenes/hud.tscn" id="1_qxrlw"]
 [ext_resource type="Script" uid="uid://dybs64cirkeea" path="res://Scripts/game.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://bcunteybxioc7" path="res://Scenes/poi.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://b5b0eovcqilc1" path="res://inventory/inventoryUI.tscn" id="5_wowpa"]
 
 [node name="Game" type="Node" unique_id=1618287267]
 script = ExtResource("1_wrm1d")
@@ -15,8 +16,16 @@ script = ExtResource("1_wrm1d")
 [node name="POI2" parent="Level 1" unique_id=923734734 instance=ExtResource("4_3dryh")]
 position = Vector2(-1088, 6888)
 
+[node name="InventoryLayer" type="CanvasLayer" parent="." unique_id=2144505574]
+
+[node name="InventoryUi" parent="InventoryLayer" unique_id=2063330441 node_paths=PackedStringArray("inventory") instance=ExtResource("5_wowpa")]
+inventory = NodePath("../../Level 1/Player2D/Inventory")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="collected" from="Level 1/Player2D" to="HUD" method="_on_player_2d_collected"]
+[connection signal="inventory_updated" from="Level 1/Player2D/Inventory" to="InventoryLayer/InventoryUi" method="refresh_ui"]
 [connection signal="body_entered" from="Level 1/POI" to="." method="_on_poi_body_entered"]
 [connection signal="body_entered" from="Level 1/POI2" to="." method="_on_poi_body_entered"]
 
 [editable path="Level 1"]
+[editable path="Level 1/Player2D"]

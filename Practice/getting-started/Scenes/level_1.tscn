@@ -6,7 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bcunteybxioc7" path="res://Scenes/poi.tscn" id="1_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://cn6prh3nqo6ae" path="res://Art/Sprites/Backgrounds/Double/background_clouds.png" id="2_lsmp6"]
 [ext_resource type="PackedScene" uid="uid://ctrxnln068a7g" path="res://Scenes/coin.tscn" id="4_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://16cyjqbeteu8" path="res://inventory/inventory.tscn" id="6_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bwhqd4a6wdl6m" path="res://Scenes/spring.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://88e4eb1t0pwr" path="res://Scenes/collectible.tscn" id="9_wrinw"]
+[ext_resource type="Texture2D" uid="uid://dbq2i1tjmvgi" path="res://Art/Vector/Tiles/hud_player_beige.svg" id="10_af3po"]
+[ext_resource type="Script" uid="uid://bg7x7lymtavp1" path="res://items/item.gd" id="11_uy8f0"]
+
+[sub_resource type="Resource" id="Resource_6r07y"]
+script = ExtResource("11_uy8f0")
+icon = ExtResource("10_af3po")
+metadata/_custom_type_script = "uid://bg7x7lymtavp1"
 
 [node name="Level 1" type="Node2D" unique_id=384316881]
 script = ExtResource("1_6444e")
@@ -130,10 +139,22 @@ position = Vector2(-808, 440)
 SPEED = 750.0
 JUMP_VELOCITY = -710.0
 
+[node name="Inventory" parent="Player2D" unique_id=445405281 instance=ExtResource("6_wrinw")]
+
 [node name="POI" parent="." unique_id=923734734 instance=ExtResource("1_xfk5q")]
 position = Vector2(4864, 1216)
 
 [node name="Spring" parent="." unique_id=718546718 instance=ExtResource("7_lsmp6")]
 position = Vector2(-448, 448)
 
+[node name="Collectible" parent="." unique_id=701755499 instance=ExtResource("9_wrinw")]
+position = Vector2(-184, 400)
+item = SubResource("Resource_6r07y")
+
+[node name="Collectible2" parent="." unique_id=2011801152 instance=ExtResource("9_wrinw")]
+position = Vector2(8, 400)
+item = SubResource("Resource_6r07y")
+
 [connection signal="body_entered" from="Spring" to="Player2D" method="_on_spring_body_entered"]
+
+[editable path="Player2D"]

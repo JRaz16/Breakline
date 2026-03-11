@@ -2,7 +2,10 @@ extends Node
 
 @export var gameover_scene:PackedScene = preload("res://Scenes/gameover.tscn")
 
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"toggle_inventory"):
+		get_viewport().set_input_as_handled()
+		$InventoryLayer/InventoryUi.open()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

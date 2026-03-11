@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
+
 var SPEED := 10.0
 var STRAFE_SPEED := 6.0
 var GROUND_ACCEL := 15.0
 var GROUND_FRICTION := 30.0
 var AIR_ACCEL := 6.0
 var AIR_CONTROL := 0.3
-const JUMP_VELOCITY := 6.0
+const JUMP_VELOCITY := 5.0
 
 # Dash settings
 var DASH_SPEED := 22.0
@@ -71,8 +72,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01)
-			camera.rotate_x(-event.relative.y * 0.01)
+			neck.rotate_y(-event.relative.x * Settings.mouse_sensitivity)
+			camera.rotate_x(-event.relative.y * Settings.mouse_sensitivity)
 			if not is_rolling:
 				camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 
@@ -279,9 +280,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_goal_ring_body_entered(body: Node3D) -> void:
 	if body == self:
-		get_tree().change_scene_to_file("res://Scenes/end_screne.tscn")
-
-
+		call_deferred("go_to_end_scene")
+		
 func _on_death_plane_body_entered(body: Node3D) -> void:
 	if body == self:
-		get_tree().change_scene_to_file("res://Scenes/end_screne.tscn")
+		call_deferred("go_to_end_scene")
+		
+func go_to_end_scene():
+	get_tree().change_scene_to_file("res://Scenes/end_screne.tscn")

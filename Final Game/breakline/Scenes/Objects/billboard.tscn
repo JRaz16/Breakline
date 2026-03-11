@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://s07hq6km3opj"]
+
+[ext_resource type="Texture2D" uid="uid://dk4eayepgbs3d" path="res://Materials/character_green_idle.png" id="1_ln606"]
+[ext_resource type="Material" uid="uid://cmyuh427sd8su" path="res://Materials/plywood.res" id="2_v5eau"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5eau"]
+size = Vector3(50, 30, 0.8)
+
+[node name="Billboard" type="StaticBody3D" unique_id=2060860391]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=302341412]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 3.3712234, 0.4145317)
+texture = ExtResource("1_ln606")
+
+[node name="Board" type="CSGBox3D" parent="." unique_id=265034278]
+size = Vector3(50, 30, 0.8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=174919732]
+shape = SubResource("BoxShape3D_v5eau")
+
+[node name="Post" type="CSGBox3D" parent="." unique_id=286087215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -65, 0)
+size = Vector3(2, 100, 2)
+material = ExtResource("2_v5eau")

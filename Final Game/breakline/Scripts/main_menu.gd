@@ -15,11 +15,14 @@ func _on_play_pressed() -> void:
 func _on_settings_pressed() -> void:
 	$CenterContainer/MainButtons.visible = false
 	$CenterContainer/SettingsMenu.visible = true
-
+	$WhiteBackground.visible = false
+	$OrangeBackground.visible = true
 
 func _on_credits_pressed() -> void:
 	$CenterContainer/MainButtons.visible = false
 	$CenterContainer/CreditsMenu.visible = true
+	$WhiteBackground.visible = false
+	$OrangeBackground.visible = true
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
@@ -29,6 +32,8 @@ func _on_back_pressed() -> void:
 	$CenterContainer/MainButtons.visible = true
 	$CenterContainer/SettingsMenu.visible = false
 	$CenterContainer/CreditsMenu.visible = false
+	$WhiteBackground.visible = true
+	$OrangeBackground.visible = false
 
 
 func _on_fullscreen_toggled(toggled_on: bool) -> void:

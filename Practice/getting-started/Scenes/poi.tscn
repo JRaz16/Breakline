@@ -6,6 +6,8 @@
 size = Vector2(128, 128)
 
 [node name="POI" type="Area2D" unique_id=923734734]
+collision_layer = 2
+collision_mask = 6
 
 [node name="Detector" type="CollisionShape2D" parent="." unique_id=378257242]
 shape = SubResource("RectangleShape2D_7rvs0")
