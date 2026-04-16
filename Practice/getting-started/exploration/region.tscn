@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bvo6yp8im5txj"]
+
+[ext_resource type="Script" uid="uid://cqrfq4btervq6" path="res://exploration/region.gd" id="1_74v76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af3po"]
+size = Vector2(512, 392)
+
+[node name="Region" type="Area2D" unique_id=442830901 groups=["discoverable"]]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_74v76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1972237553]
+position = Vector2(-256, -148)
+shape = SubResource("RectangleShape2D_af3po")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

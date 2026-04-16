@@ -3,15 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://b36pm53k5107g" path="res://Scenes/level_1.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://5jyc6ybnxi4i" path="res://Scenes/hud.tscn" id="1_qxrlw"]
 [ext_resource type="Script" uid="uid://dybs64cirkeea" path="res://Scripts/game.gd" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://bck2lu4iq4tve" path="res://Quest/quest_journal.tscn" id="2_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://bcunteybxioc7" path="res://Scenes/poi.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://88e4eb1t0pwr" path="res://Scenes/collectible.tscn" id="4_v158k"]
+[ext_resource type="Texture2D" uid="uid://7q52ifcfrjws" path="res://Art/Sprites/Characters/Default/character_green_front.png" id="5_v158k"]
 [ext_resource type="PackedScene" uid="uid://b5b0eovcqilc1" path="res://inventory/inventoryUI.tscn" id="5_wowpa"]
+[ext_resource type="Script" uid="uid://bg7x7lymtavp1" path="res://items/item.gd" id="6_ldgsr"]
 
-[node name="Game" type="Node" unique_id=1618287267]
+[sub_resource type="Resource" id="Resource_o5yvi"]
+script = ExtResource("6_ldgsr")
+name = "Shaper"
+icon = ExtResource("5_v158k")
+metadata/_custom_type_script = "uid://bg7x7lymtavp1"
+
+[node name="Game" type="Node" unique_id=1618287267 node_paths=PackedStringArray("quest_journal")]
 script = ExtResource("1_wrm1d")
+quest_journal = NodePath("QuestJournal")
+
+[node name="QuestJournal" parent="." unique_id=119750437 instance=ExtResource("2_h4fw4")]
 
 [node name="HUD" parent="." unique_id=1317784640 instance=ExtResource("1_qxrlw")]
 
 [node name="Level 1" parent="." unique_id=384316881 instance=ExtResource("1_ebmjs")]
+
+[node name="Collectible3" parent="Level 1" unique_id=701755499 instance=ExtResource("4_v158k")]
+position = Vector2(128, 72)
+item = SubResource("Resource_o5yvi")
 
 [node name="POI2" parent="Level 1" unique_id=923734734 instance=ExtResource("4_3dryh")]
 position = Vector2(-1088, 6888)
@@ -19,6 +36,7 @@ position = Vector2(-1088, 6888)
 [node name="InventoryLayer" type="CanvasLayer" parent="." unique_id=2144505574]
 
 [node name="InventoryUi" parent="InventoryLayer" unique_id=2063330441 node_paths=PackedStringArray("inventory") instance=ExtResource("5_wowpa")]
+visible = false
 inventory = NodePath("../../Level 1/Player2D/Inventory")
 metadata/_edit_use_anchors_ = true
 

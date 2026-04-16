@@ -10,7 +10,11 @@ signal collected(coins:int)
 ##Vertical Jump speed in pixels/sec.
 @export_range(-1000, 0, 10) var JUMP_VELOCITY: float = -400.0
 
-var coins_collected:int = 0
+var coins_collected:int = 0:
+	set(val):
+		coins_collected = val
+		collected.emit(coins_collected)
+		
 var direction: float = 0
 var is_falling:bool = false
 
@@ -72,8 +76,11 @@ func _on_avatar_animation_finished() -> void:
 	if $Avatar.animation == "landed":
 		$Avatar.play("idle")
 		
+func _on_quest_rewarded(quest:Quest):
+	coins_collected += quest.reward
 
-
+func _ready() -> void:
+	QuestChannel.quest_rewarded.connect(_on_quest_rewarded)
 
 func _on_spring_body_entered(body: Node2D) -> void:
 		if body == self:

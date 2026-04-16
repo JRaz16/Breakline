@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bck2lu4iq4tve"]
+
+[ext_resource type="Script" uid="uid://b8w8d7e02j5ce" path="res://Quest/quest_journal.gd" id="1_cpo23"]
+[ext_resource type="Texture2D" uid="uid://cm0im23ebovgo" path="res://Art/Sprites/Tiles/Double/hud_player_beige.png" id="2_61fc8"]
+[ext_resource type="Texture2D" uid="uid://dypixo1cjrc7g" path="res://Art/Sprites/Tiles/Double/hud_player_pink.png" id="3_enxgr"]
+[ext_resource type="Texture2D" uid="uid://7w57d3sj8tpm" path="res://Art/Sprites/Tiles/Double/hud_player_green.png" id="4_vnsb5"]
+[ext_resource type="Texture2D" uid="uid://cw34qhw6bw03a" path="res://Art/Sprites/Tiles/Double/hud_player_purple.png" id="5_k22q0"]
+
+[node name="QuestJournal" type="CanvasLayer" unique_id=119750437]
+process_mode = 2
+script = ExtResource("1_cpo23")
+icons = Array[Texture2D]([ExtResource("2_61fc8"), ExtResource("3_enxgr"), ExtResource("4_vnsb5"), ExtResource("5_k22q0")])
+colors = Array[Color]([Color(1, 0, 0, 1), Color(1, 0.5921569, 0, 1), Color(0, 1, 0.95686275, 1), Color(0, 1, 0, 1)])
+metadata/_custom_type_script = "uid://b8w8d7e02j5ce"
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=266894694]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21176471, 0.23921569, 0.2901961, 0.83137256)
+
+[node name="Chooser" type="Panel" parent="." unique_id=137272655]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -124.0
+offset_right = 240.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestList" type="ItemList" parent="Chooser" unique_id=429168882]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CloseButton" type="Button" parent="Chooser" unique_id=2051603175]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 240.0
+offset_right = 266.0
+offset_bottom = 271.0
+text = "Close"
+
+[connection signal="pressed" from="Chooser/CloseButton" to="." method="close"]

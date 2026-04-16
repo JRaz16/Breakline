@@ -28,3 +28,19 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.510805, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck" unique_id=805291561]
+
+[node name="WallRayLeft" type="RayCast3D" parent="Neck" unique_id=2117134870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
+target_position = Vector3(-1.2, 0, 0)
+
+[node name="WallRayRight" type="RayCast3D" parent="Neck" unique_id=1850296900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
+target_position = Vector3(1.2, 0, 0)
+
+[node name="LedgeRay" type="RayCast3D" parent="Neck" unique_id=390065349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.089195, 0)
+target_position = Vector3(0, -1, -1)
+
+[node name="WallRayForward" type="RayCast3D" parent="Neck" unique_id=1472663265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
+target_position = Vector3(0, 0, -0.6)

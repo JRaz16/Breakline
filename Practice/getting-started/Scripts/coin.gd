@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
 		body.coins_collected += 1
-		body.collected.emit(body.coins_collected)
 		print("Coins collected: " + str(body.coins_collected))
 		self.queue_free()

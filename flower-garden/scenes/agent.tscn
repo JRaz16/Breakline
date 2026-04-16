@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cupqauemwwege"]
+
+[ext_resource type="Texture2D" uid="uid://dium5l1bsj3ho" path="res://art/characters/character_purple_idle.png" id="1_umeaf"]
+[ext_resource type="Script" uid="uid://jtuq8m1vx3v2" path="res://scripts/agent.gd" id="2_2kdcs"]
+[ext_resource type="Script" uid="uid://cgn7qtv5f0efb" path="res://scripts/astar.gd" id="3_yc63n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umeaf"]
+size = Vector2(256, 256)
+
+[node name="Agent" type="Sprite2D" unique_id=1604080806]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_umeaf")
+centered = false
+script = ExtResource("2_2kdcs")
+
+[node name="AStar" type="Node" parent="." unique_id=1596745220]
+script = ExtResource("3_yc63n")
+metadata/_custom_type_script = "uid://cgn7qtv5f0efb"
+
+[node name="Sniffer" type="Area2D" parent="." unique_id=52946469]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sniffer" unique_id=549190560]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_umeaf")

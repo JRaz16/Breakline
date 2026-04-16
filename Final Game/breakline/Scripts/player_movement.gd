@@ -50,11 +50,39 @@ var fall_distance := 0.0
 var roll_start_rotation := Vector3.ZERO
 var roll_progress := 0.0
 
+# WALL MOVEMENT
+var WALL_RUN_SPEED := 11.0
+var WALL_RUN_GRAVITY := 0.4
+var WALL_RUN_TIME := 1.5
+
+var WALL_CLIMB_SPEED := 6.0
+var WALL_JUMP_FORCE := 8.0
+
+var is_wall_running := false
+var wall_run_timer := 0.0
+var wall_normal := Vector3.ZERO
+
+var WALL_CLIMB_TIME := 0.35   # max climb duration
+var wall_climb_timer := 0.0
+var is_wall_climbing := false
+
+# Mantle / Vault
+var is_mantling := false
+var mantle_target := Vector3.ZERO
+var mantle_speed := 8.0
+
+# Camera tilt
+var target_camera_tilt := 0.0
+
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var dash_meter = $"../UI/Control/DashMeter"
 @onready var standing_collision = $StandingCollisionShape3D
 @onready var crouching_collision = $CrouchingCollisionShape3D
+@onready var wall_ray_left := $Neck/WallRayLeft
+@onready var wall_ray_right := $Neck/WallRayRight
+@onready var wall_ray_forward := $Neck/WallRayForward
+@onready var ledge_ray := $Neck/LedgeRay
 
 func _ready():
 	crouching_collision.disabled = true
@@ -103,11 +131,72 @@ func _physics_process(delta: float) -> void:
 				velocity.x = 0
 				velocity.z = 0
 		fall_distance = 0
+		
+	# WALL RUN DETECTION
+	if not is_on_floor() and not is_wall_running:
+		
+		if not is_wall_running and wall_ray_forward.is_colliding() and Input.is_action_pressed("move_forward"):
+			var normal = wall_ray_forward.get_collision_normal()
+			# Only allow vertical surfaces
+			if abs(normal.y) < 0.2:
+				is_wall_climbing = true
+				wall_climb_timer = WALL_CLIMB_TIME
+					
+				velocity.x = move_toward(velocity.x, 0, 20 * delta)
+				velocity.z = move_toward(velocity.z, 0, 20 * delta)
+				
+				velocity.y = WALL_CLIMB_SPEED
 
+		if is_wall_climbing:
+			wall_climb_timer -= delta
+			if wall_climb_timer <= 0 or not Input.is_action_pressed("move_forward") or not wall_ray_forward.is_colliding():
+				is_wall_climbing = false
+				
+		if wall_ray_left.is_colliding() and Input.is_action_pressed("move_forward") and velocity.y < 1:
+			var normal = wall_ray_left.get_collision_normal()
+			if abs(normal.y) < 0.2:
+				is_wall_running = true
+				wall_run_timer = WALL_RUN_TIME
+				wall_normal = normal
+				velocity.y = 0
+				target_camera_tilt = deg_to_rad(-12)
+			
+		elif wall_ray_right.is_colliding() and Input.is_action_pressed("move_forward") and velocity.y < 1:
+			var normal = wall_ray_right.get_collision_normal()
+			if abs(normal.y) < 0.2:
+				is_wall_running = true
+				wall_run_timer = WALL_RUN_TIME
+				wall_normal = normal
+				velocity.y = 0
+				target_camera_tilt = deg_to_rad(12)
+			
+	if is_wall_running:
+		wall_run_timer -= delta
+		# reduced gravity
+		velocity.y += get_gravity().y * WALL_RUN_GRAVITY * delta
+		# move along wall
+		var forward_dir = -neck.global_transform.basis.z
+		var wall_direction = forward_dir.slide(wall_normal).normalized()
+		
+		var target_velocity = wall_direction * WALL_RUN_SPEED
+		velocity.x = lerp(velocity.x, target_velocity.x, 8 * delta)
+		velocity.z = lerp(velocity.z, target_velocity.z, 8 * delta)
+		
+		if wall_run_timer <= 0 or is_on_floor() \
+		or (!wall_ray_left.is_colliding() and !wall_ray_right.is_colliding()):
+			is_wall_running = false
+			target_camera_tilt = 0
 
 	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		
+		elif is_wall_running:
+			velocity = wall_normal * WALL_JUMP_FORCE
+			velocity.y = JUMP_VELOCITY
+			is_wall_running = false
+			target_camera_tilt = deg_to_rad(0)
 
 	# Input
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -180,7 +269,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = new_velocity.x
 		velocity.z = new_velocity.z
 
-	else:
+	elif not is_wall_running:
 		horizontal_velocity = horizontal_velocity.move_toward(
 			direction * SPEED,
 			AIR_ACCEL * delta
@@ -261,9 +350,25 @@ func _physics_process(delta: float) -> void:
 			camera.rotation.x = 45
 			
 	else:
-		camera.rotation.z = 0
+		camera.rotation.z = lerp(camera.rotation.z, target_camera_tilt, 8 * delta)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 		
+	# LEDGE VAULT
+	if ledge_ray.is_colliding() and not is_on_floor() and not is_wall_running and not wall_ray_forward.is_colliding() and Input.is_action_pressed("move_forward"):
+		
+		var ledge_point = ledge_ray.get_collision_point()
+		
+		if not is_mantling and velocity.y <= 0:
+			is_mantling = true
+			mantle_target = ledge_point + Vector3.UP * 1.2
+			velocity = Vector3.ZERO
+
+	if is_mantling:
+		global_position = global_position.move_toward(mantle_target, mantle_speed * delta)
+		
+		if global_position.distance_to(mantle_target) < 0.1:
+			is_mantling = false
+	
 	# FOV effect based on speed
 	var forward_speed = velocity.dot(-forward)
 	forward_speed = max(forward_speed, 0) # ignore backward

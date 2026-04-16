@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @export var attacks:Array[Attack] = []
 
-var current_attack:int = -1
+var current_attack:int = 0
 
 #@export var melee_attack:PackedScene = preload("res://scenes/combat/melee_attack.tscn")
 #@export var ranged_attack:PackedScene = preload("res://scenes/combat/ranged_attack.tscn")

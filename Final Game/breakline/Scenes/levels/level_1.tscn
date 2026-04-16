@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://de8164ovvfugu" path="res://Scenes/Objects/goal_ring.tscn" id="4_cru1l"]
 [ext_resource type="PackedScene" uid="uid://dfmqm70ds3r0c" path="res://Scenes/Objects/ramp.tscn" id="6_qyddi"]
 [ext_resource type="PackedScene" uid="uid://s07hq6km3opj" path="res://Scenes/Objects/billboard.tscn" id="7_qek6e"]
+[ext_resource type="AudioStream" uid="uid://b6l3x6282r3og" path="res://Sounds/Music/Farewell.mp3" id="7_tlryv"]
+[ext_resource type="PackedScene" uid="uid://bb41h44rtyo3s" path="res://Scenes/Objects/floor_tile.tscn" id="9_dsuda"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k5f4k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,9 +55,25 @@ transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.8, 87.027, -207.04886, -1.53
 [node name="Wall" parent="." unique_id=1241431369 instance=ExtResource("3_yffda")]
 transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 2, 0, -4.371139e-08, 38.15293, 4.6108313, -11.209739)
 
+[node name="Wall2" parent="." unique_id=406298509 instance=ExtResource("3_yffda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43024635, 4.809744, -1.1683626)
+
+[node name="CSGBox3D" parent="Wall2" index="0" unique_id=921306884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2719727, -1.8046875, 0)
+size = Vector3(9.456055, 6.390625, 1)
+
+[node name="Collider" parent="Wall2" index="1" unique_id=1454442538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.279541, -3.5915456, 0)
+
 [node name="Player" parent="." unique_id=33635978 instance=ExtResource("1_tumq0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1815732, 1.6445246, 2.7789583)
 collision_mask = 3
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player/Neck/Camera3D" parent_id_path=PackedInt32Array(33635978, 805291561) index="0" unique_id=1741121825]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.013364553, -0.1553297, -0.5992464)
+stream = ExtResource("7_tlryv")
+autoplay = true
+bus = &"MUSIC"
 
 [node name="Goal Ring" parent="." unique_id=175029579 instance=ExtResource("4_cru1l")]
 transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 181.62605, -10.686207, 5.0961037)
@@ -82,10 +100,17 @@ transform = Transform2D(1, 0, 0, 1, 895, 700)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
 shape = SubResource("BoxShape3D_0lml3")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1741121825]
-
 [node name="Billboard" parent="." unique_id=2060860391 instance=ExtResource("7_qek6e")]
 transform = Transform3D(-0.21608174, 0, -0.97637546, 0, 1, 0, 0.97637546, 0, -0.21608174, 397.50763, -4.862694, 30.103214)
 
+[node name="Floor Tile" parent="." unique_id=1194441535 instance=ExtResource("9_dsuda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.102654, -10.859033, 31.607449)
+
+[node name="Wall3" parent="." unique_id=1263025807 instance=ExtResource("3_yffda")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 1, 53.446884, -25.911095, 33.62636)
+
 [connection signal="body_entered" from="Goal Ring" to="Player" method="_on_goal_ring_body_entered"]
 [connection signal="body_entered" from="DeathPlane" to="Player" method="_on_death_plane_body_entered"]
+
+[editable path="Wall2"]
+[editable path="Player"]
