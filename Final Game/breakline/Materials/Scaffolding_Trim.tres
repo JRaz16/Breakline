@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cspgdmxodnjb"]
+
+[ext_resource type="Texture2D" uid="uid://bexueet5x4bcx" path="res://Models/modular_scaffolding_pack/textures/Scaffolding_Trim_baseColor.jpeg" id="1_ymjgt"]
+[ext_resource type="Texture2D" uid="uid://b287ctsc3cs4k" path="res://Models/modular_scaffolding_pack/textures/Scaffolding_Trim_metallicRoughness.png" id="2_o5mkc"]
+[ext_resource type="Texture2D" uid="uid://b6ltycikc8lpi" path="res://Models/modular_scaffolding_pack/textures/Scaffolding_Trim_normal.png" id="3_hw7vy"]
+
+[resource]
+resource_name = "Scaffolding_Trim"
+cull_mode = 2
+albedo_texture = ExtResource("1_ymjgt")
+metallic = 1.0
+metallic_texture = ExtResource("2_o5mkc")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_o5mkc")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_hw7vy")

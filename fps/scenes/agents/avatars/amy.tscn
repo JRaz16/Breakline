@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://w6xd0six35ce"]
+
+[ext_resource type="PackedScene" uid="uid://cbqvowfknvopu" path="res://art/models/amy.gltf" id="1_5hbxo"]
+[ext_resource type="PackedScene" uid="uid://c1mfc73kmuo08" path="res://scenes/weapons/watergun.tscn" id="2_4byvc"]
+
+[node name="Amy" instance=ExtResource("1_5hbxo")]
+
+[node name="RightHand" type="BoneAttachment3D" parent="IDLE/Skeleton3D" index="1"]
+transform = Transform3D(-0.00700382, -0.998979, -0.0446162, 0.99997, -0.00713745, 0.00283643, -0.00315198, -0.0445949, 0.999, -51.6779, -0.978953, -106.383)
+bone_name = "mixamorig_RightHand"
+bone_idx = 34
+
+[node name="watergun" parent="IDLE/Skeleton3D/RightHand" index="0" instance=ExtResource("2_4byvc")]
+transform = Transform3D(-19.8108, 96.0348, 19.6175, 24.1845, 24.1845, -93.9692, -94.9876, -13.8717, -28.0167, 18, 12, 0)

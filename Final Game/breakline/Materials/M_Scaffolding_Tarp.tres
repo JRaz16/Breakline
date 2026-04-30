@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chkqmjreqxpce"]
+
+[ext_resource type="Texture2D" uid="uid://b33rbr0aiid77" path="res://Models/modular_scaffolding_pack/textures/M_Scaffolding_Tarp_baseColor.png" id="1_vriuc"]
+[ext_resource type="Texture2D" uid="uid://swbmtjkujh7t" path="res://Models/modular_scaffolding_pack/textures/M_Scaffolding_Tarp_metallicRoughness.png" id="2_50a4i"]
+[ext_resource type="Texture2D" uid="uid://ctat5aodjj42w" path="res://Models/modular_scaffolding_pack/textures/M_Scaffolding_Tarp_normal.png" id="3_0deuy"]
+
+[resource]
+resource_name = "M_Scaffolding_Tarp"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_vriuc")
+metallic = 1.0
+metallic_texture = ExtResource("2_50a4i")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_50a4i")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_0deuy")

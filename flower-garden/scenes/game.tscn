@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://brclsox8vfk4"]
+
+[ext_resource type="PackedScene" uid="uid://daxah4nbxow1l" path="res://scenes/world.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://bq1rqati010gp" path="res://scripts/game_manager.gd" id="1_yqjtg"]
+
+[node name="Game" type="CanvasLayer" unique_id=1633663929]
+process_mode = 3
+script = ExtResource("1_yqjtg")
+
+[node name="World" parent="." unique_id=1846664214 instance=ExtResource("1_uwrxv")]
+process_mode = 1

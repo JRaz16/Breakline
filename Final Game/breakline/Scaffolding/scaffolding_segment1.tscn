@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://q55uyjyircf"]
+
+[ext_resource type="ArrayMesh" uid="uid://cl3bnskqv2oa5" path="res://Meshes/Sketchfab_Scene_Scaffolding_Segment_Scaffolding_Trim_0.res" id="1_xv0ir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gav36"]
+
+[node name="Scaffolding_Segment" type="StaticBody3D" unique_id=793295983]
+
+[node name="Scaffolding_Segment_Scaffolding_Trim_0" type="MeshInstance3D" parent="." unique_id=1391809033]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5, 1.5, -0.5)
+mesh = ExtResource("1_xv0ir")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=119311700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -1)
+shape = SubResource("BoxShape3D_gav36")

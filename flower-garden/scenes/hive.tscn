@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://m5gewlpfn6lr"]
+
+[ext_resource type="Texture2D" uid="uid://clxctoxagjx8b" path="res://art/objects/beehive.png" id="1_421t1"]
+[ext_resource type="Script" uid="uid://csypf5owmvu0e" path="res://hive.gd" id="2_2mrw7"]
+
+[node name="Hive" type="Sprite2D" unique_id=1247212844]
+texture = ExtResource("1_421t1")
+centered = false
+script = ExtResource("2_2mrw7")

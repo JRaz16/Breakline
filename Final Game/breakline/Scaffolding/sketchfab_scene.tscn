@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c5vfi2g6gm4hu"]
+
+[ext_resource type="PackedScene" uid="uid://bgxdat0jbe6wo" path="res://Models/modular_scaffolding_pack/scene.gltf" id="1_n5wtp"]
+[ext_resource type="ArrayMesh" uid="uid://cl3bnskqv2oa5" path="res://Meshes/Sketchfab_Scene_Scaffolding_Segment_Scaffolding_Trim_0.res" id="2_bsn0g"]
+
+[node name="Sketchfab_Scene" unique_id=1376467764 instance=ExtResource("1_n5wtp")]
+
+[node name="Scaffolding_Segment" type="Node3D" parent="." index="1" unique_id=745458355]
+transform = Transform3D(100, 0, 0, 0, -1.6292068e-05, 100, 0, -100, -1.6292068e-05, 960.3502, 133.86845, -3.5762787e-05)
+
+[node name="Scaffolding_Segment_Scaffolding_Trim_0" type="MeshInstance3D" parent="Scaffolding_Segment" index="0" unique_id=615696061]
+mesh = ExtResource("2_bsn0g")

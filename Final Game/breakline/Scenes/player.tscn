@@ -32,15 +32,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.510805, 0)
 [node name="WallRayLeft" type="RayCast3D" parent="Neck" unique_id=2117134870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
 target_position = Vector3(-1.2, 0, 0)
+collision_mask = 3
 
 [node name="WallRayRight" type="RayCast3D" parent="Neck" unique_id=1850296900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
 target_position = Vector3(1.2, 0, 0)
+collision_mask = 3
 
 [node name="LedgeRay" type="RayCast3D" parent="Neck" unique_id=390065349]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.089195, 0)
-target_position = Vector3(0, -1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.006345868, 0)
+target_position = Vector3(0, 0, -0.9)
+collision_mask = 3
 
 [node name="WallRayForward" type="RayCast3D" parent="Neck" unique_id=1472663265]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010805011, 0)
-target_position = Vector3(0, 0, -0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.82863307, 0)
+target_position = Vector3(0, 0, -0.7)
+collision_mask = 3
+
+[node name="MantleRay" type="RayCast3D" parent="Neck" unique_id=1411288144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010769486, 0)
+target_position = Vector3(0, -0.3, -0.8)

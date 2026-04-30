@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1mfc73kmuo08"]
+
+[ext_resource type="PackedScene" uid="uid://4fkhquf22aol" path="res://art/models/watergun.gltf" id="1_d3bco"]
+
+[node name="watergun" instance=ExtResource("1_d3bco")]

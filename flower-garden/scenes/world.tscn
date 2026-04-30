@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://8hs7s1kvponn" path="res://scripts/world.gd" id="1_431cr"]
 [ext_resource type="Texture2D" uid="uid://cfbvmcwv64tsm" path="res://art/tiles/tiles_sheet.png" id="2_lifqj"]
 [ext_resource type="PackedScene" uid="uid://cupqauemwwege" path="res://scenes/agent.tscn" id="3_hkd4h"]
+[ext_resource type="PackedScene" uid="uid://m5gewlpfn6lr" path="res://scenes/hive.tscn" id="3_i7141"]
 [ext_resource type="PackedScene" uid="uid://baynjnd5rlhe2" path="res://scenes/goal.tscn" id="4_in7nb"]
-[ext_resource type="Texture2D" uid="uid://c7lhiwea53q5d" path="res://art/objects/sunflower.png" id="5_c741g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e4k2"]
 texture = ExtResource("2_lifqj")
@@ -126,10 +126,13 @@ tile_map_data = PackedByteArray("AAADAAQAAAABAAQAAAALAAEAAAABAAQAAAAKAAcAAAABAAQ
 tile_set = SubResource("TileSet_7lk38")
 rendering_quadrant_size = 64
 
-[node name="Agent" parent="." unique_id=1171334440 node_paths=PackedStringArray("world", "goal") instance=ExtResource("3_hkd4h")]
+[node name="Hive" parent="." unique_id=1247212844 instance=ExtResource("3_i7141")]
+
+[node name="Agent" parent="." unique_id=1171334440 node_paths=PackedStringArray("world", "home", "goal") instance=ExtResource("3_hkd4h")]
 world = NodePath("..")
+home = NodePath("../Hive")
 goal = NodePath("../Flowers/Goal")
-step_delay = 0.2
+speed = 10.0
 
 [node name="AStar" parent="Agent" index="0" unique_id=1596745220 node_paths=PackedStringArray("graph")]
 graph = NodePath("../..")
@@ -137,33 +140,18 @@ graph = NodePath("../..")
 [node name="Flowers" type="Node" parent="." unique_id=511935810]
 
 [node name="Goal" parent="Flowers" unique_id=513683792 instance=ExtResource("4_in7nb")]
-position = Vector2(960, 512)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_c741g")
-centered = false
+position = Vector2(986, 538)
 
 [node name="Goal2" parent="Flowers" unique_id=1693326955 instance=ExtResource("4_in7nb")]
-position = Vector2(960, -1.999939)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_c741g")
-centered = false
+position = Vector2(986, 40.999996)
 
 [node name="Goal3" parent="Flowers" unique_id=110386920 instance=ExtResource("4_in7nb")]
-position = Vector2(315.00006, 505.99997)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_c741g")
-centered = false
+position = Vector2(287, 485.99997)
 
 [node name="Goal4" parent="Flowers" unique_id=1999758850 instance=ExtResource("4_in7nb")]
-position = Vector2(1.0000305, 304)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_c741g")
-centered = false
+position = Vector2(28.999998, 325)
 
 [node name="Goal5" parent="Flowers" unique_id=1579311150 instance=ExtResource("4_in7nb")]
-position = Vector2(446.99997, 253)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_c741g")
-centered = false
+position = Vector2(458.00003, 222)
 
 [editable path="Agent"]

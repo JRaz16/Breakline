@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy6ffka0gejrn"]
+
+[ext_resource type="Script" path="res://scripts/characters/Player.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://r208f7fwxkjs" path="res://scenes/weapons/waterballoon.tscn" id="2_b6q84"]
+[ext_resource type="AudioStream" uid="uid://uyhrlb5dt32f" path="res://audio/sounds/waterballoon_launch.wav" id="3_pnyv0"]
+[ext_resource type="AudioStream" uid="uid://bofg5h3ip01gh" path="res://audio/sounds/watershot.wav" id="4_qwhlb"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.35
+height = 1.4
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1")
+balloon = ExtResource("2_b6q84")
+sound_balloon_launch = ExtResource("3_pnyv0")
+sound_gun = ExtResource("4_qwhlb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("1")
+
+[node name="Eyes" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+current = true
+fov = 37.8493
+
+[node name="LineOfSight" type="RayCast3D" parent="Eyes"]
+target_position = Vector3(0, 0, -100)
+collision_mask = 4
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="."]

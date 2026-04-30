@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://btqyaobkhxktf"]
+
+[ext_resource type="Texture2D" uid="uid://c81iguneh5p77" path="res://art/textures/amy_diffuse.png" id="1_jaq24"]
+[ext_resource type="Texture2D" uid="uid://b07mbn28lrrc0" path="res://art/textures/amy_glossiness.png" id="2_hd3hi"]
+[ext_resource type="Texture2D" uid="uid://drunnvnljehuw" path="res://art/textures/amy_normal.png" id="3_c0lqp"]
+
+[resource]
+resource_name = "Amy_body"
+cull_mode = 2
+albedo_texture = ExtResource("1_jaq24")
+metallic = 0.5
+metallic_texture = ExtResource("2_hd3hi")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_hd3hi")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_c0lqp")

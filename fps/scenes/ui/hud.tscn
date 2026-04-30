@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpwp50dasvqk1"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hp7dp"]
+[ext_resource type="Script" path="res://scripts/ui/screen_flash.gd" id="1_wcdum"]
+[ext_resource type="FontFile" uid="uid://dkjw2cwbdejuq" path="res://art/ui/BebasNeue-Regular.ttf" id="2_rdj42"]
+[ext_resource type="Texture2D" uid="uid://juvtxfah44q5" path="res://art/ui/crossHair.png" id="3_qob41"]
+[ext_resource type="Script" path="res://scripts/ui/crosshair.gd" id="4_il4gh"]
+
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("2_rdj42")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/72/0/ascent = 0.0
+cache/0/72/0/descent = 0.0
+cache/0/72/0/underline_position = 0.0
+cache/0/72/0/underline_thickness = 0.0
+cache/0/72/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[sub_resource type="FontFile" id="9"]
+fallbacks = Array[Font]([ExtResource("2_rdj42")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hp7dp")
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[node name="ScreenFlash" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 1, 1)
+script = ExtResource("1_wcdum")
+
+[node name="CrossHair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -39.0
+offset_right = 39.0
+offset_bottom = 39.0
+texture = ExtResource("3_qob41")
+expand_mode = 1
+script = ExtResource("4_il4gh")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.6
+anchor_right = 0.9
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource("7")
+theme_override_font_sizes/font_size = 36
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 200.0
+theme_override_fonts/font = SubResource("7")
+theme_override_font_sizes/font_size = 36
+text = "Dryness: 0"
+vertical_alignment = 1
+
+[node name="Lives" type="Label" parent="."]
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 350.0
+offset_bottom = 250.0
+theme_override_fonts/font = SubResource("7")
+theme_override_font_sizes/font_size = 36
+text = "Lives: 0"
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = 200.0
+theme_override_fonts/font = SubResource("9")
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

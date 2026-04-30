@@ -40,13 +40,13 @@ func initialize_grid() -> void:
 ## Returns the coordinates of the immediate neighbors for the specified cell.
 func neighbors(cell:Vector2i) -> Array[Vector2i]:
 	var ns:Array[Vector2i] = []
-	if cell.x > 0: # and cells[size.x * cell.y + cell.x - 1] == false:
+	if cell.x > 0 and cells[size.x * cell.y + cell.x - 1] == false:
 		ns.append(Vector2i(cell.x - 1, cell.y))
-	if cell.x < size.x - 1: # and cells[size.x * cell.y + cell.x + 1] == false:
+	if cell.x < size.x - 1 and cells[size.x * cell.y + cell.x + 1] == false:
 		ns.append(Vector2i(cell.x + 1, cell.y))
-	if cell.y > 0: # and cells[size.x * (cell.y - 1) + cell.x] == false:
+	if cell.y > 0 and cells[size.x * (cell.y - 1) + cell.x] == false:
 		ns.append(Vector2i(cell.x, cell.y - 1))
-	if cell.y < size.y - 1: # and cells[size.x * (cell.y + 1) + cell.x] == false:
+	if cell.y < size.y - 1 and cells[size.x * (cell.y + 1) + cell.x] == false:
 		ns.append(Vector2i(cell.x, cell.y + 1))
 	return ns
 
@@ -60,11 +60,6 @@ func _ready() -> void:
 	print("world has " + str(size.y) + " rows and " + str(size.x) + " cols")
 	initialize_grid()
 
-# Called when the state of an input device changes
-func _input(event:InputEvent) -> void:
-	if event is InputEventMouseButton:
-		print("Mouse Click/Unclick at: ", event.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta:float) -> void:
-	pass
+func _process(_delta:float) -> void: pass

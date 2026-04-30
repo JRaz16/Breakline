@@ -1,0 +1,412 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1758,
+      "max": [
+        0.04151459410786629,
+        0.07351042330265045,
+        0.03667505085468292
+      ],
+      "min": [
+        -0.04303982853889465,
+        -0.22440870106220245,
+        -0.19147445261478424
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 21096,
+      "componentType": 5126,
+      "count": 1758,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1758,
+      "max": [
+        0.9924227595329285,
+        0.9958760738372803
+      ],
+      "min": [
+        0.004123955965042114,
+        0.004123985767364502
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 14064,
+      "componentType": 5126,
+      "count": 1758,
+      "max": [
+        0.9924227595329285,
+        0.9958760738372803
+      ],
+      "min": [
+        0.004123955965042114,
+        0.004123985767364502
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 28128,
+      "componentType": 5126,
+      "count": 1758,
+      "max": [
+        0.9924227595329285,
+        0.9958760738372803
+      ],
+      "min": [
+        0.004123955965042114,
+        0.004123985767364502
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 7368,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 42192,
+      "componentType": 5126,
+      "count": 856,
+      "max": [
+        0.010991767048835754,
+        0.001659676432609558,
+        -0.015606820583343506
+      ],
+      "min": [
+        -0.014546984806656837,
+        -0.3119894862174988,
+        -0.06806609034538269
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 52464,
+      "componentType": 5126,
+      "count": 856,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 42192,
+      "componentType": 5126,
+      "count": 856,
+      "max": [
+        0.9810367226600647,
+        0.48988771438598633
+      ],
+      "min": [
+        0.004123955965042114,
+        0.012699544429779053
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 49040,
+      "componentType": 5126,
+      "count": 856,
+      "max": [
+        0.9810367226600647,
+        0.48988771438598633
+      ],
+      "min": [
+        0.004123955965042114,
+        0.012699544429779053
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 55888,
+      "componentType": 5126,
+      "count": 856,
+      "max": [
+        0.9810367226600647,
+        0.48988771438598633
+      ],
+      "min": [
+        0.004123955965042114,
+        0.012699544429779053
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 29472,
+      "componentType": 5125,
+      "count": 3732,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "adarose (https://sketchfab.com/adarose)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/watergun-vr-ready-f58fab90aa204d168d9c36208ce7ce62",
+      "title": "Watergun VR Ready"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 44400,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 62736,
+      "byteOffset": 44400,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 62736,
+      "byteOffset": 107136,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 169872,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "../textures/watergun_albedo.png"
+    },
+    {
+      "uri": "../textures/watergun_metallic_roughness.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Material",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.295513,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TEXCOORD_0": 2,
+            "TEXCOORD_1": 3,
+            "TEXCOORD_2": 4
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6,
+            "TEXCOORD_0": 8,
+            "TEXCOORD_1": 9,
+            "TEXCOORD_2": 10
+          },
+          "indices": 11,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.18131189048290253,
+        0.01125054806470867,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4,
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.992757342454489,
+        0.12013683449592175,
+        0.0,
+        0.0,
+        -0.12013683449592175,
+        0.992757342454489,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Body_1"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_4"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0010149776935577393,
+        0.017824238166213036,
+        -0.03177031874656677,
+        1.0
+      ],
+      "name": "Slider_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_6"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    }
+  ]
+}

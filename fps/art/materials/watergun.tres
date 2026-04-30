@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cpx4ouenhnr4k"]
+
+[ext_resource type="Texture2D" uid="uid://bqgr27fbi50l" path="res://art/textures/watergun_albedo.png" id="1_2h865"]
+[ext_resource type="Texture2D" uid="uid://dx4b3r75wqxag" path="res://art/textures/watergun_metallic_roughness.png" id="2_vscum"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_2h865")
+metallic = 1.0
+metallic_texture = ExtResource("2_vscum")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_vscum")
+roughness_texture_channel = 1

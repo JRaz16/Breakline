@@ -18,8 +18,11 @@ var heap:Array[Element]
 func _init() -> void:
 	heap = []
 
+
+## Reset the queue by removing all elements
 func clear():
 	heap.clear()
+
 
 #region Observers
 
