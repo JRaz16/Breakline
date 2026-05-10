@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dep8or5psya4d"]
+
+[ext_resource type="ArrayMesh" uid="uid://iovv2axloqyf" path="res://Meshes/Sketchfab_Scene_Scaffolding_Segment_Scaffolding_Trim_0.res" id="1_quvsi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quvsi"]
+size = Vector3(3.0076904, 1.25, 0.042)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ru1cq"]
+size = Vector3(2.9909668, 0.099609375, 2.6687012)
+
+[node name="scaffolding_floor" type="Node3D" unique_id=191114926]
+
+[node name="Scaffolding_Segment" type="Node3D" parent="." unique_id=1958367759]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scaffolding_Segment" unique_id=406924296 groups=["no_climb"]]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Scaffolding_Segment_Scaffolding_Trim_0" type="MeshInstance3D" parent="Scaffolding_Segment/StaticBody3D" unique_id=840465985]
+mesh = ExtResource("1_quvsi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaffolding_Segment/StaticBody3D" unique_id=473634238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4968872, -0.61397207, -1.3399013)
+shape = SubResource("BoxShape3D_quvsi")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Scaffolding_Segment/StaticBody3D" unique_id=1469946374]
+transform = Transform3D(1, 0, 0, 0, 0.9999863, -0.005235964, 0, 0.005235964, 0.9999863, -1.4840698, -1.1933811, -0.0158047)
+shape = SubResource("BoxShape3D_ru1cq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Scaffolding_Segment/StaticBody3D" unique_id=1581644096]
+transform = Transform3D(1, 0, 0, 0, 0.9999863, -0.005235964, 0, 0.005235964, 0.9999863, -1.4988521, -0.013745466, -0.031609297)
+shape = SubResource("BoxShape3D_ru1cq")

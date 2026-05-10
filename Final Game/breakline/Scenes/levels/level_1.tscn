@@ -3,11 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://yhdgkllsra7l" path="res://Scenes/UI.tscn" id="1_0lml3"]
 [ext_resource type="PackedScene" uid="uid://cb0op2whwextg" path="res://Scenes/Objects/building.tscn" id="1_qyddi"]
 [ext_resource type="PackedScene" uid="uid://ch55btgj128s" path="res://Scenes/player.tscn" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://cpvy5qnl7b50m" path="res://Scenes/Buildings/slide_building.tscn" id="2_onyy7"]
 [ext_resource type="PackedScene" uid="uid://de8164ovvfugu" path="res://Scenes/Objects/goal_ring.tscn" id="4_cru1l"]
+[ext_resource type="AudioStream" uid="uid://dcvuvgop55tnw" path="res://Sounds/Music/[Official] Celeste B-Sides - 01 - Maxo - Forsaken City (Sever the Skyline Mix).mp3" id="5_n3ge2"]
 [ext_resource type="PackedScene" uid="uid://dfmqm70ds3r0c" path="res://Scenes/Objects/ramp.tscn" id="6_qyddi"]
 [ext_resource type="PackedScene" uid="uid://s07hq6km3opj" path="res://Scenes/Objects/billboard.tscn" id="7_qek6e"]
-[ext_resource type="AudioStream" uid="uid://b6l3x6282r3og" path="res://Sounds/Music/Farewell.mp3" id="7_tlryv"]
+[ext_resource type="PackedScene" uid="uid://32yitayolcce" path="res://Scenes/pause_menu.tscn" id="8_flpb6"]
 [ext_resource type="PackedScene" uid="uid://dhhsnv0qv11bw" path="res://Scenes/Objects/billboard_slide.tscn" id="8_tlryv"]
+[ext_resource type="PackedScene" uid="uid://d4mjlh8iiufjs" path="res://Scenes/Objects/sign.tscn" id="9_dsuda"]
+[ext_resource type="PackedScene" uid="uid://cry16ioobu685" path="res://Scenes/death_screen.tscn" id="9_n3ge2"]
+[ext_resource type="PackedScene" uid="uid://bc6y4qw08n6fm" path="res://Scenes/Objects/small_sign.tscn" id="10_s5b24"]
+[ext_resource type="PackedScene" uid="uid://bmcsearxgixtm" path="res://Scenes/Objects/Vents/ventilation_shaft_round.tscn" id="11_iu068"]
+[ext_resource type="PackedScene" uid="uid://syy8431x0ywb" path="res://Scenes/Objects/Boxes/tall_box.tscn" id="12_flpb6"]
+[ext_resource type="PackedScene" uid="uid://c6ke1y4i85apl" path="res://Scenes/Objects/Vents/ventilation_shaft_junction_round.tscn" id="12_lpshy"]
+[ext_resource type="PackedScene" uid="uid://b7y7l8vtefbv1" path="res://Scenes/Objects/Vents/ventilation_shaft_grate.tscn" id="13_onyy7"]
+[ext_resource type="PackedScene" uid="uid://c1bj6oukmedrd" path="res://Scenes/Objects/Vents/ventilation_shaft_long.tscn" id="14_flpb6"]
+[ext_resource type="PackedScene" uid="uid://c3agbfj6vset1" path="res://Scenes/Objects/Vents/ventilation_shaft_short.tscn" id="15_n3ge2"]
+[ext_resource type="PackedScene" uid="uid://fdd8x5x1ih3y" path="res://Scenes/Objects/Vents/ventilation_shaft_curved_90_h.tscn" id="16_v6uk5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k5f4k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,6 +39,8 @@ size = Vector3(10000, 1, 10000)
 
 [node name="World" type="Node3D" unique_id=776203393]
 
+[node name="PauseMenu" parent="." unique_id=196648861 instance=ExtResource("8_flpb6")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1858276007]
 environment = SubResource("Environment_81xng")
 
@@ -37,62 +51,335 @@ shadow_enabled = true
 [node name="Buildings" type="Node" parent="." unique_id=428614572]
 
 [node name="Building2" parent="Buildings" unique_id=2070438661 instance=ExtResource("1_qyddi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.83725, -215.91632, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.26868, -215.42628, 30)
 
 [node name="Building3" parent="Buildings" unique_id=739560705 instance=ExtResource("1_qyddi")]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 179.04535, -215.91632, 4.506897)
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 365.5329, -233.95023, 19.994602)
+
+[node name="Building8" parent="Buildings" unique_id=1040737069 instance=ExtResource("1_qyddi")]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 261.64413, -219.22397, 19.994602)
 
 [node name="Building" parent="Buildings" unique_id=1488001484 instance=ExtResource("1_qyddi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -202.5, 0)
 
 [node name="Building4" parent="Buildings" unique_id=1109437764 instance=ExtResource("1_qyddi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 45.171883, -204.1716, -10.655624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 48.785812, -204.1716, -10.655624)
 
 [node name="Building5" parent="Buildings" unique_id=924506237 instance=ExtResource("1_qyddi")]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.8, 87.027, -207.04886, -1.532898)
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.8, 94.39759, -207.04886, -1.532898)
+
+[node name="Building6" parent="Buildings" unique_id=604155807 instance=ExtResource("1_qyddi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.61302, -209.35089, 0)
+
+[node name="Building7" parent="Buildings" unique_id=2109817941 instance=ExtResource("1_qyddi")]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 1.001, 168.01889, -205.77861, 0)
+
+[node name="Building9" parent="Buildings" unique_id=1697102344 instance=ExtResource("1_qyddi")]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 0.7, 274.73685, -212.63518, 19.788803)
+
+[node name="Slide Building" parent="Buildings" unique_id=1318478258 instance=ExtResource("2_onyy7")]
+transform = Transform3D(-1, 0, -1.0569706e-07, 0, 0.8, 0, 1.509958e-07, 0, -0.7, 302.83212, -187.92546, 20.125214)
 
 [node name="Player" parent="." unique_id=33635978 instance=ExtResource("1_tumq0")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1815732, 1.6445246, 2.7789583)
-collision_mask = 3
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.142788, 1.2505546, 0)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player/Neck/Camera3D" parent_id_path=PackedInt32Array(33635978, 805291561) index="0" unique_id=1741121825]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.013364553, -0.1553297, -0.5992464)
-stream = ExtResource("7_tlryv")
+stream = ExtResource("5_n3ge2")
+volume_db = -30.137
 autoplay = true
 bus = &"MUSIC"
 
 [node name="Goal Ring" parent="." unique_id=175029579 instance=ExtResource("4_cru1l")]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 181.62605, -10.686207, 5.0961037)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 372.38892, -29.37923, 20.583809)
+collision_layer = 2
 
 [node name="Ramp" parent="." unique_id=802551932 instance=ExtResource("6_qyddi")]
 transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 16.550968, 0.5853684, -7.5730095)
 
 [node name="Ramp3" parent="." unique_id=158587780 instance=ExtResource("6_qyddi")]
-transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 61.72285, -1.0862398, -4.137458)
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 65.33678, -1.0862398, -4.137458)
 
 [node name="Ramp4" parent="." unique_id=438998137 instance=ExtResource("6_qyddi")]
-transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 94.097916, -3.9620376, 9.7566185)
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 101.4182, -3.9620376, 8.515168)
 
 [node name="Ramp2" parent="." unique_id=1500192495 instance=ExtResource("6_qyddi")]
-transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 146.4105, -12.877205, 19.492304)
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 220.84192, -12.387161, 19.492304)
+
+[node name="Ramp6" parent="." unique_id=1561368169 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 279.9402, -9.540237, 19.492304)
+
+[node name="Ramp5" parent="." unique_id=386306117 instance=ExtResource("6_qyddi")]
+transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 173.16809, -2.6944962, 13.725412)
 
 [node name="UI" parent="." unique_id=660830866 instance=ExtResource("1_0lml3")]
-offset = Vector2(895, 700)
-transform = Transform2D(1, 0, 0, 1, 895, 700)
+
+[node name="Death Screen" parent="." unique_id=1414814873 instance=ExtResource("9_n3ge2")]
 
 [node name="DeathPlane" type="Area3D" parent="." unique_id=1713100506]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathPlane" unique_id=974308427]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -45.625305, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -75.195816, 0)
 shape = SubResource("BoxShape3D_0lml3")
 
-[node name="Billboard" parent="." unique_id=2060860391 instance=ExtResource("7_qek6e")]
-transform = Transform3D(-0.21608174, 0, -0.97637546, 0, 1, 0, 0.97637546, 0, -0.21608174, 397.50763, -4.862694, 30.103214)
+[node name="Signs" type="Node" parent="." unique_id=1207975202]
 
-[node name="Billboard2" parent="." unique_id=1950700541 instance=ExtResource("8_tlryv")]
-transform = Transform3D(-1.8358783e-08, 0, -0.42, 0, 0.42, 0, 0.42, 0, -1.8358783e-08, 35.50289, 6.2374763, -10.674051)
+[node name="Billboard3" parent="Signs" unique_id=2060860391 instance=ExtResource("7_qek6e")]
+transform = Transform3D(-0.49852636, 0, -0.038359538, 0, 0.5, 0, 0.038359538, 0, -0.49852636, 121.8179, 0, 12.843589)
+
+[node name="Billboard" parent="Signs" unique_id=458353840 instance=ExtResource("7_qek6e")]
+transform = Transform3D(-0.17414656, 0, -0.98471993, 0, 1, 0, 0.98471993, 0, -0.17414656, 231.32538, 2.1533499, 27.96473)
+
+[node name="Billboard2" parent="Signs" unique_id=1950700541 instance=ExtResource("8_tlryv")]
+transform = Transform3D(-1.8358783e-08, 0, -0.42, 0, 0.42, 0, 0.42, 0, -1.8358783e-08, 39.11682, 6.0320196, -10.674051)
+
+[node name="Sign" parent="Signs" unique_id=165581565 instance=ExtResource("9_dsuda")]
+transform = Transform3D(-0.5105429, 0, -0.85985225, 0, 1, 0, 0.85985225, 0, -0.5105429, -4.4796143, 5.38862, 8.848669)
+
+[node name="Title" parent="Signs/Sign" index="1" unique_id=957398136]
+modulate = Color(0, 0.973653, 0.973653, 1)
+font_size = 120
+
+[node name="Body" parent="Signs/Sign" index="2" unique_id=1934873688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005540848, -0.39104462, 0.55631876)
+text = "The controls are quite simple:
+
+Press WASD to Move
+Press Space to Jump
+Press Shift to Dash. Your dash meter will refil while you are grounded
+and while you run on walls
+Press CTRL to Crouch. If you have enough speed, you can Slide as well
+Press Q to quickly turn around
+
+And that is it!
+Have fun and may the winds guide you."
+font_size = 100
+outline_size = 20
+autowrap_trim_flags = 64
+
+[node name="Small Sign" parent="Signs" unique_id=1423166999 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.3376963, 0, 0.67865205, 0, 1.5, 0, -0.67865205, 0, -1.3376963, 32.646343, -1.6372275, -3.5824685)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(1423166999, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.01, 0, -1.5099579e-09, 0, 0.01, 7.771561e-16, 1.5099579e-09, 7.771561e-16, -0.010000001, -0.021485955, -0.010900438, 0.014388128)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(1423166999, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -2.1491451, 0.71594226, 1.0885849)
+
+[node name="Label3D" parent="Signs/Small Sign/Sketchfab_Scene" parent_id_path=PackedInt32Array(1423166999, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-2.9802322e-08, 0, 0.99999994, 0, 0.99999994, 0, -0.99999994, 0, -2.9802322e-08, -1.9951096, 0.8371659, 1.0900459)
+text = "Slide Here"
+font_size = 45
+
+[node name="Small Sign2" parent="Signs" unique_id=1214694509 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-0.98388505, 0, -0.17880225, 0, 1, 0, 0.17880225, 0, -0.98388505, 62.76783, -1.6073806, -10.583539)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign2/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(1214694509, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.009999999, 0, -1.5099575e-09, 0, 0.009999999, 9.992007e-16, 1.5099577e-09, 7.771561e-16, -0.009999999, -0.035556853, 0.0064617842, 0.014388128)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign2/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(1214694509, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.556244, 0.7159424, -0.6476393)
+
+[node name="Label3D" parent="Signs/Small Sign2/Sketchfab_Scene" parent_id_path=PackedInt32Array(1214694509, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-4.4703484e-08, 0, 1, 0, 1, 0, -1, 0, -4.4703484e-08, -3.4021988, 0.83716595, -0.64617825)
+modulate = Color(0, 0.9970613, 0.9970613, 1)
+text = "Remember to Dash!"
+
+[node name="Small Sign3" parent="Signs" unique_id=1809609371 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.4989926, 0, -0.054965694, 0, 1.5, 0, 0.054965694, 0, -1.4989926, 102.49179, -4.540246, 1.9531662)
+
+[node name="Label3D" parent="Signs/Small Sign3/Sketchfab_Scene" parent_id_path=PackedInt32Array(1809609371, 2010851660) index="2" unique_id=2092292419]
+text = "Jump sideways into a wall 
+to Wallrun"
+autowrap_trim_flags = 64
+
+[node name="Small Sign4" parent="Signs" unique_id=358028329 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-0.89179754, 0, -0.4524347, 0, 1, 0, 0.4524347, 0, -0.89179754, 144.67342, -6.8478446, -4.697652)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign4/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(358028329, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.01, -4.656613e-10, -1.5099577e-09, -4.656613e-10, 0.01, 6.661338e-16, 1.5099577e-09, 7.771561e-16, -0.01, 0.011338234, -0.005752206, 0.014388125)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign4/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(358028329, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1332855, 0.7159424, 0.573761)
+
+[node name="Label3D" parent="Signs/Small Sign4/Sketchfab_Scene" parent_id_path=PackedInt32Array(358028329, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 1.2873077, 0.83716583, 0.5752182)
+text = "Run and jump straight 
+into a wall to climb up it"
+
+[node name="Small Sign5" parent="Signs" unique_id=1452591470 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.6178292, 0, -0.789068, 0, 1.8, 0, 0.789068, 0, -1.6178292, 172.18039, -3.2638657, 0)
+
+[node name="Label3D" parent="Signs/Small Sign5/Sketchfab_Scene" parent_id_path=PackedInt32Array(1452591470, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(2.9802322e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 2.9802322e-08, 0.15348053, 0.8669269, 0)
+text = "One more thing:
+If you jump from a large height, 
+you will lose your momentum.
+But You can press CTRL right 
+when you land to Roll. This 
+will keep your Momentum."
+font_size = 26
+
+[node name="Small Sign6" parent="Signs" unique_id=1316558649 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.2734575, 0, -0.7926574, 0, 1.5, 0, 0.7926574, 0, -1.2734575, 247.08922, -10.81089, 0.59947205)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign6/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(1316558649, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.01, 0, -1.5099586e-09, 0, 0.01, -4.440892e-16, 1.5099578e-09, 7.771561e-16, -0.01, -0.59318924, 0.49084628, -0.1230392)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign6/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(1316558649, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.319656, -13.0268, -49.08622)
+
+[node name="Label3D" parent="Signs/Small Sign6/Sketchfab_Scene" parent_id_path=PackedInt32Array(1316558649, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, -59.16562, -12.905582, -49.08474)
+text = "Ahead is the goal ring.
+Jump through it to move on 
+to the next level
+
+There will be arrows as 
+guides from here on out.
+Good luck!"
+font_size = 26
+autowrap_trim_flags = 64
+
+[node name="Small Sign7" parent="Signs" unique_id=1300489499 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.2734575, 0, -0.7926574, 0, 1.5, 0, 0.7926574, 0, -1.2734575, 201.8677, -8.967031, 0.59947205)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign7/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(1300489499, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.01, 0, -1.5099586e-09, 0, 0.01, -4.440892e-16, 1.5099578e-09, 7.771561e-16, -0.01, -0.038281918, 0.1454475, -0.012002595)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign7/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(1300489499, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8288422, -1.9231329, -14.546257)
+
+[node name="Label3D" parent="Signs/Small Sign7/Sketchfab_Scene" parent_id_path=PackedInt32Array(1300489499, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, -3.674759, -1.8019094, -14.544777)
+text = "You can hold crouch to
+crawl through vents"
+font_size = 30
+autowrap_trim_flags = 64
+
+[node name="Small Sign8" parent="Signs" unique_id=1646867759 instance=ExtResource("10_s5b24")]
+transform = Transform3D(-1.4688342, 0, -0.30418092, 0, 1.5, 0, 0.30418092, 0, -1.4688342, 264.49075, -6.246162, -7.7122297)
+
+[node name="theatresign_Material_0" parent="Signs/Small Sign8/Sketchfab_Scene/Sketchfab_model/97b533609aa94b399f251a4fd121e26b_fbx/RootNode/theatresign" parent_id_path=PackedInt32Array(1646867759, 679016620) index="0" unique_id=1505706753]
+transform = Transform3D(-0.009999999, -2.3283064e-10, -1.5099586e-09, -2.3283064e-10, 0.009999999, -4.440892e-16, 1.5099576e-09, 7.771561e-16, -0.01, -0.041692138, 0.14615375, -0.012002595)
+
+[node name="CollisionShape3D" parent="Signs/Small Sign8/Sketchfab_Scene/StaticBody3D" parent_id_path=PackedInt32Array(1646867759, 962977402) index="0" unique_id=41736003]
+transform = Transform3D(1.0000001, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1.0000001, -4.169876, -1.9231329, -14.61689)
+
+[node name="Label3D" parent="Signs/Small Sign8/Sketchfab_Scene" parent_id_path=PackedInt32Array(1646867759, 2010851660) index="2" unique_id=2092292419]
+transform = Transform3D(-1.0430813e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -1.0430813e-07, -4.015793, -1.7808886, -14.61541)
+text = "You can also slide down 
+slopes to gain a lot 
+of momentum
+
+You can clear gaps that are
+normally impossible
+to clear"
+font_size = 26
+autowrap_trim_flags = 64
+
+[node name="Tall Box" parent="." unique_id=1369073459 instance=ExtResource("12_flpb6")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 260.7602, -16.928934, 20.21817)
+
+[node name="Vents" type="Node" parent="." unique_id=1288519552]
+
+[node name="VentilationShaft_Round" parent="Vents" unique_id=503755107 instance=ExtResource("11_iu068")]
+transform = Transform3D(0.0043283775, -2.4182523e-10, -0.9999908, -1.5099577e-07, -0.37, -1.5542716e-15, -0.9999908, 5.5867925e-08, -0.0043283775, 235.90591, -13.845919, 19.599003)
+
+[node name="VentilationShaft_JunctionRound" parent="Vents" unique_id=584983548 instance=ExtResource("12_lpshy")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 235.22034, -14.992723, 19.656927)
+
+[node name="VentilationShaft_JunctionRound3" parent="Vents" unique_id=1056625668 instance=ExtResource("12_lpshy")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 228.12375, -13.414524, 17.75682)
+
+[node name="VentilationShaft_JunctionRound2" parent="Vents" unique_id=464509607 instance=ExtResource("12_lpshy")]
+transform = Transform3D(-0.9999907, 1.509944e-07, -0.0043283477, -1.509958e-07, -1, 0, -0.0043283477, 6.535634e-10, 0.9999907, 236.5711, -13.426413, 19.605864)
+
+[node name="VentilationShaft_JunctionRound4" parent="Vents" unique_id=1944662223 instance=ExtResource("12_lpshy")]
+transform = Transform3D(-0.9999907, 1.509944e-07, -0.0043283477, -1.509958e-07, -1, 0, -0.0043283477, 6.535634e-10, 0.9999907, 229.46642, -12.309994, 17.762247)
+
+[node name="VentilationShaft_Grate" parent="Vents" unique_id=1766286568 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.0060940646, 1.9597843, -0.082138, 1.2516715e-08, -0.08213839, -1.9597934, -1.9615052, -0.006088717, 0.00025518367, 247.9526, -14.3322735, 19.773289)
+
+[node name="VentilationShaft_Grate2" parent="Vents" unique_id=1238152638 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 235.29811, -15.015314, 19.666557)
+
+[node name="VentilationShaft_Grate3" parent="Vents" unique_id=980376626 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 236.44983, -13.453924, 19.610538)
+
+[node name="VentilationShaft_JunctionRound7" parent="Vents" unique_id=2107663091 instance=ExtResource("12_lpshy")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 240.21407, -14.986948, 19.696594)
+
+[node name="VentilationShaft_JunctionRound8" parent="Vents" unique_id=451360477 instance=ExtResource("12_lpshy")]
+transform = Transform3D(-0.9999907, 1.509944e-07, -0.0043283477, -1.509958e-07, -1, 0, -0.0043283477, 6.535634e-10, 0.9999907, 241.55562, -13.913736, 19.702091)
+
+[node name="VentilationShaft_Grate8" parent="Vents" unique_id=368098068 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 241.54427, -15.009539, 19.706224)
+
+[node name="VentilationShaft_Grate9" parent="Vents" unique_id=1041088197 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 240.30826, -13.941248, 19.706766)
+
+[node name="VentilationShaft_Grate4" parent="Vents" unique_id=596876459 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 228.14609, -13.430414, 17.760326)
+
+[node name="VentilationShaft_Grate5" parent="Vents" unique_id=8760676 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 229.4512, -12.305519, 17.765982)
+
+[node name="VentilationShaft_JunctionRound5" parent="Vents" unique_id=1640808441 instance=ExtResource("12_lpshy")]
+transform = Transform3D(-0.0043283924, 0, -0.99999064, 0, 1, 0, 0.99999064, 0, -0.0043283924, 225.1323, -12.311819, 18.66062)
+
+[node name="VentilationShaft_JunctionRound6" parent="Vents" unique_id=1601660389 instance=ExtResource("12_lpshy")]
+transform = Transform3D(-0.9999907, 1.509944e-07, -0.0043283477, -1.509958e-07, -1, 0, -0.0043283477, 6.535634e-10, 0.9999907, 225.80298, -11.216587, 19.337416)
+
+[node name="VentilationShaft_Grate6" parent="Vents" unique_id=1736083300 instance=ExtResource("13_onyy7")]
+transform = Transform3D(1.961496, 0, -0.008490115, 0, 1.9615141, 0, 0.00849013, 0, 1.9614966, 225.13528, -12.317575, 19.890524)
+
+[node name="VentilationShaft_Grate7" parent="Vents" unique_id=1526945490 instance=ExtResource("13_onyy7")]
+transform = Transform3D(-0.008490205, 0, -1.9614966, 0, 1.9615141, 0, 1.961496, 0, -0.00849019, 225.78778, -11.212112, 19.341152)
+
+[node name="VentilationShaft_Long" parent="Vents" unique_id=1452275402 instance=ExtResource("14_flpb6")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 231.28363, -13.42404, 19.582537)
+
+[node name="VentilationShaft_Long2" parent="Vents" unique_id=1871379877 instance=ExtResource("14_flpb6")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 241.54259, -13.9143915, 19.701752)
+
+[node name="VentilationShaft_Short" parent="Vents" unique_id=1981538049 instance=ExtResource("15_n3ge2")]
+transform = Transform3D(0.9998599, 0, -0.016736917, 0, 1, 0, 0.016736917, 0, 0.9998599, 245.53186, -13.909344, 19.734322)
+
+[node name="VentilationShaft_Short2" parent="Vents" unique_id=1593063449 instance=ExtResource("15_n3ge2")]
+transform = Transform3D(0.99999064, 0, -0.0043283585, 0, 1, 0, 0.0043283585, 0, 0.99999064, 226.0592, -12.306929, 17.749924)
+
+[node name="VentilationShaft_Curved90_h" parent="Vents" unique_id=436851946 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(0.9999907, 0, -0.0043283477, 0, 1, 0, 0.0043283477, 0, 0.9999907, 236.57216, -14.995592, 19.706615)
+
+[node name="VentilationShaft_Curved90_h5" parent="Vents" unique_id=1336196657 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 238.44234, -15.010353, 21.574192)
+
+[node name="VentilationShaft_Curved90_h6" parent="Vents" unique_id=1994115292 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 239.32262, -14.995592, 20.620811)
+
+[node name="VentilationShaft_Curved90_h7" parent="Vents" unique_id=7688772 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 239.30844, -14.995592, 20.634573)
+
+[node name="VentilationShaft_Curved90_h2" parent="Vents" unique_id=1300294049 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(-0.99999064, 0, 0.004328437, 0, 1, 0, -0.004328437, 0, -0.99999064, 231.28008, -13.420603, 19.58801)
+
+[node name="VentilationShaft_Curved90_h4" parent="Vents" unique_id=1520237537 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(-0.9999907, 1.509944e-07, -0.0043283477, -1.509958e-07, -1, 0, -0.0043283477, 6.535634e-10, 0.9999907, 226.07266, -12.310724, 17.747757)
+
+[node name="VentilationShaft_Curved90_h3" parent="Vents" unique_id=1380117912 instance=ExtResource("16_v6uk5")]
+transform = Transform3D(0.0043283924, 6.5356964e-10, -0.99999064, 1.509958e-07, -1, 0, -0.99999064, -1.509944e-07, -0.0043283924, 230.34259, -13.419073, 18.701145)
 
 [connection signal="body_entered" from="Goal Ring" to="Player" method="_on_goal_ring_body_entered"]
 [connection signal="body_entered" from="DeathPlane" to="Player" method="_on_death_plane_body_entered"]
 
 [editable path="Player"]
+[editable path="Signs/Sign"]
+[editable path="Signs/Small Sign"]
+[editable path="Signs/Small Sign2"]
+[editable path="Signs/Small Sign3"]
+[editable path="Signs/Small Sign4"]
+[editable path="Signs/Small Sign5"]
+[editable path="Signs/Small Sign6"]
+[editable path="Signs/Small Sign7"]
+[editable path="Signs/Small Sign8"]

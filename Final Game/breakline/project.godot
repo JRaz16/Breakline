@@ -8,6 +8,11 @@
 
 config_version=5
 
+[animation]
+
+warnings/check_invalid_track_paths=false
+warnings/check_angle_interpolation_type_conflicting=false
+
 [application]
 
 config/name="Breakline"
@@ -22,6 +27,8 @@ buses/default_bus_layout="uid://ciwxr3euiddfd"
 [autoload]
 
 Settings="*uid://b0ndpatve1mkm"
+GameManager="*uid://bcvld4hbhq7ob"
+EventManager="*uid://dwt04o4ef48nn"
 
 [display]
 
@@ -32,7 +39,12 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/advanced_model_import/plugin.cfg", "res://addons/physics_collision_import_generator/plugin.cfg")
+enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
+
+[global_group]
+
+no_climb=""
+forced_slide_roof=""
 
 [input]
 
@@ -85,7 +97,8 @@ quick_turn={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-3d/default_gravity=9.799999999999995
+3d/default_gravity=10.5
+common/physics_interpolation=true
 
 [rendering]
 

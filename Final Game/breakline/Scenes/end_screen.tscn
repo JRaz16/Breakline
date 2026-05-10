@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://bt2tcqmbqqxr7"]
+
+[ext_resource type="Script" uid="uid://c8hxe46m53sch" path="res://Scripts/end_screne.gd" id="1_8yanq"]
+[ext_resource type="FontFile" uid="uid://c7txjskje61j3" path="res://Fonts/Dash-Horizon-Demo.otf" id="2_fi2y0"]
+[ext_resource type="Theme" uid="uid://conrkn6n1khfk" path="res://Themes/new_theme.tres" id="3_em7vc"]
+[ext_resource type="Script" uid="uid://dm250j8frjhq5" path="res://Scenes/final_time_label.gd" id="4_4suit"]
+[ext_resource type="FontFile" uid="uid://cjatxn0bflkuf" path="res://Fonts/Chopsic.otf" id="5_wqrt5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vu54"]
+font = ExtResource("5_wqrt5")
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="End Screen" type="Node2D" unique_id=1414814873]
+script = ExtResource("1_8yanq")
+
+[node name="Label" type="Label" parent="." unique_id=1089621455]
+offset_left = 210.0
+offset_top = 200.0
+offset_right = 1710.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(18.892, 18.892, 18.892, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -14
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_fi2y0")
+theme_override_font_sizes/font_size = 122
+text = "Thank You For Playing My Game!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1369627138]
+offset_top = 450.0
+offset_right = 1920.0
+offset_bottom = 1030.0
+theme = ExtResource("3_em7vc")
+
+[node name="EndMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1826131915]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Return" type="Button" parent="CenterContainer/EndMenu" unique_id=1440372061]
+custom_minimum_size = Vector2(353, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = " Return to Title "
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=226363032]
+z_index = -4096
+offset_left = -114.0
+offset_top = -92.0
+offset_right = 2153.0
+offset_bottom = 1191.0
+mouse_filter = 2
+color = Color(0.49411765, 0.99607843, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2104388022]
+z_index = -4096
+offset_left = 967.0
+offset_top = -284.0
+offset_right = 3317.0
+offset_bottom = -270.0
+rotation = 0.7853982
+mouse_filter = 2
+color = Color(1, 0.745, 0.49, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=199921036]
+z_index = -4096
+offset_left = -178.00003
+offset_top = 299.00012
+offset_right = 2172.0
+offset_bottom = 313.00012
+rotation = 0.7853982
+mouse_filter = 2
+color = Color(1, 0.745, 0.49, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1361468439]
+z_index = -4096
+offset_left = -558.9999
+offset_top = 1286.9999
+offset_right = 1791.0001
+offset_bottom = 1300.9999
+rotation = -0.93898714
+mouse_filter = 2
+color = Color(17.455406, 17.455406, 17.455406, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=379391349]
+z_index = -4096
+offset_left = 1178.0
+offset_top = 1602.9999
+offset_right = 3528.0
+offset_bottom = 1616.9999
+rotation = -0.93898714
+mouse_filter = 2
+color = Color(17.455406, 17.455406, 17.455406, 1)
+
+[node name="Control" type="Control" parent="." unique_id=2002621763]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("4_4suit")
+
+[node name="FinalTimeLabel" type="Label" parent="Control" unique_id=1087471299]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_0vu54")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/EndMenu/Return" to="." method="_on_return_pressed"]

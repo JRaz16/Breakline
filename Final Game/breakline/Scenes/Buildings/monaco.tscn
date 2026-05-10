@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dodo5opbcsak0"]
+
+[ext_resource type="PackedScene" uid="uid://b0oymibyqq2k0" path="res://Models/buildings/Monaco/monaco_building_3.glb" id="1_4jxov"]
+
+[node name="Monaco" type="Node3D" unique_id=503596744]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1562768580 instance=ExtResource("1_4jxov")]
+
+[node name="monaco residential 3_Material #25_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/64d06aa0d68143858e06cca29cd85e9a_fbx/RootNode/monaco residential 3/Object_4" parent_id_path=PackedInt32Array(1562768580, 946887057) index="0" unique_id=822315103]
+collision_layer = 2
+
+[editable path="Sketchfab_Scene"]

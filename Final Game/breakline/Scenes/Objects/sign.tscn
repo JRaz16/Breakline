@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d4mjlh8iiufjs"]
+
+[ext_resource type="FontFile" uid="uid://cneqoudplqsqr" path="res://Fonts/Pixel Digivolve.otf" id="1_ddryd"]
+[ext_resource type="Material" uid="uid://cmyuh427sd8su" path="res://Materials/plywood.res" id="1_xykhp"]
+[ext_resource type="FontFile" uid="uid://c7txjskje61j3" path="res://Fonts/Dash-Horizon-Demo.otf" id="2_xykhp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d3ht"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tf2i"]
+size = Vector3(15, 8, 0.5)
+
+[node name="Sign" type="Node3D" unique_id=165581565]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1397906839]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Board" type="CSGBox3D" parent="StaticBody3D" unique_id=165706471]
+size = Vector3(15, 8, 0.5)
+material = SubResource("StandardMaterial3D_1d3ht")
+
+[node name="Post" type="CSGBox3D" parent="StaticBody3D" unique_id=1982973446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0360727, -4.815084, -0.000385046)
+size = Vector3(0.68896484, 1.6079102, 0.66064453)
+material = ExtResource("1_xykhp")
+
+[node name="Post2" type="CSGBox3D" parent="StaticBody3D" unique_id=1807289225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.064535, -4.815084, -0.000385046)
+size = Vector3(0.68896484, 1.6079102, 0.66064453)
+material = ExtResource("1_xykhp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1825682406]
+shape = SubResource("BoxShape3D_6tf2i")
+
+[node name="Title" type="Label3D" parent="." unique_id=957398136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2105362, 0.2749989)
+text = "Welcome To Breakline"
+font = ExtResource("1_ddryd")
+font_size = 80
+
+[node name="Body" type="Label3D" parent="." unique_id=1934873688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00068312883, -0.09197497, 0.5650301)
+text = "Body Text"
+font = ExtResource("2_xykhp")
+font_size = 80

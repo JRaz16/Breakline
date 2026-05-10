@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ckf1mltc51lph"]
+
+[ext_resource type="PackedScene" uid="uid://oht25nb4xdt" path="res://Models/metal_sheet/metal_sheet_roof_new__old__part-1.glb" id="1_75if8"]
+
+[node name="metal_sheets" type="Node3D" unique_id=891485934]
+
+[node name="Sketchfab_Scene" parent="." unique_id=373284069 instance=ExtResource("1_75if8")]
+
+[editable path="Sketchfab_Scene"]

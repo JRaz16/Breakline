@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://32yitayolcce"]
+
+[ext_resource type="FontFile" uid="uid://c7txjskje61j3" path="res://Fonts/Dash-Horizon-Demo.otf" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://bkw7hc5tccs61" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Theme" uid="uid://conrkn6n1khfk" path="res://Themes/new_theme.tres" id="3_1och7"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=196648861]
+process_mode = 2
+script = ExtResource("1_k0w1u")
+
+[node name="Control" type="Control" parent="." unique_id=2015077093]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1976133788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.007843138, 0.23921569, 0.23921569, 0.16470589)
+
+[node name="Title" type="Label" parent="Control" unique_id=1180966768]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0.49411765, 0.99607843, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.2784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -28
+theme_override_constants/shadow_offset_y = 24
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("1_emv3i")
+theme_override_font_sizes/font_size = 150
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=677338992]
+layout_mode = 0
+offset_top = 350.0
+offset_right = 1920.0
+offset_bottom = 930.0
+theme = ExtResource("3_1och7")
+
+[node name="MainButtons" type="VBoxContainer" parent="Control/CenterContainer" unique_id=484143620]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="resume" type="Button" parent="Control/CenterContainer/MainButtons" unique_id=1612318491]
+layout_mode = 2
+text = "RESUME
+"
+
+[node name="quit" type="Button" parent="Control/CenterContainer/MainButtons" unique_id=40788409]
+layout_mode = 2
+text = "QUIT
+"

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cry16ioobu685"]
+
+[ext_resource type="FontFile" uid="uid://c7txjskje61j3" path="res://Fonts/Dash-Horizon-Demo.otf" id="1_amiou"]
+[ext_resource type="Script" uid="uid://bfqps1irvard2" path="res://Scripts/death_screen.gd" id="1_vb6s7"]
+[ext_resource type="Theme" uid="uid://conrkn6n1khfk" path="res://Themes/new_theme.tres" id="2_vb6s7"]
+
+[node name="Death Screen" type="CanvasLayer" unique_id=1033222929]
+script = ExtResource("1_vb6s7")
+
+[node name="Label" type="Label" parent="." unique_id=1089621455]
+offset_left = 210.0
+offset_top = 200.0
+offset_right = 1710.0
+offset_bottom = 303.0
+theme_override_colors/font_color = Color(18.892, 18.892, 18.892, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -14
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("1_amiou")
+theme_override_font_sizes/font_size = 122
+text = "Do You Want to Continue?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1369627138]
+offset_top = 450.0
+offset_right = 1920.0
+offset_bottom = 1030.0
+theme = ExtResource("2_vb6s7")
+
+[node name="EndMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1826131915]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Retry" type="Button" parent="CenterContainer/EndMenu" unique_id=1291414843]
+layout_mode = 2
+text = "RETRY
+"
+
+[node name="Quit" type="Button" parent="CenterContainer/EndMenu" unique_id=147821222]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=226363032]
+z_index = -4096
+offset_left = -114.0
+offset_top = -92.0
+offset_right = 2153.0
+offset_bottom = 1191.0
+mouse_filter = 2
+color = Color(0.9929865, 0.89788437, 0.6011541, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2104388022]
+z_index = -4096
+offset_left = 967.0
+offset_top = -284.0
+offset_right = 3317.0
+offset_bottom = -270.0
+rotation = 0.7853982
+mouse_filter = 2
+color = Color(0.12156863, 1, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=199921036]
+z_index = -4096
+offset_left = -178.00003
+offset_top = 299.00012
+offset_right = 2172.0
+offset_bottom = 313.00012
+rotation = 0.7853982
+mouse_filter = 2
+color = Color(0.12156863, 1, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1361468439]
+z_index = -4096
+offset_left = -558.9999
+offset_top = 1286.9999
+offset_right = 1791.0001
+offset_bottom = 1300.9999
+rotation = -0.93898714
+mouse_filter = 2
+color = Color(17.455406, 17.455406, 17.455406, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=379391349]
+z_index = -4096
+offset_left = 1178.0
+offset_top = 1602.9999
+offset_right = 3528.0
+offset_bottom = 1616.9999
+rotation = -0.93898714
+mouse_filter = 2
+color = Color(17.455406, 17.455406, 17.455406, 1)

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c2ldo0ggvmqie"]
+
+[ext_resource type="PackedScene" uid="uid://bqsvo7mahv6e3" path="res://Models/buildings/Building/building.glb" id="1_bwp5l"]
+
+[node name="Long Building" type="Node3D" unique_id=1150273849]
+
+[node name="Sketchfab_Scene" parent="." unique_id=2135188629 instance=ExtResource("1_bwp5l")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Object_4_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="0" unique_id=1875116948]
+collision_layer = 2
+
+[node name="Object_5_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="1" unique_id=839712544 groups=["no_climb"]]
+collision_layer = 2
+
+[node name="Object_5" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0/Object_5_StaticBody" index="0" unique_id=1618642320 groups=["no_climb"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015716553, 0.07030487, 0.0033082962)
+
+[node name="Object_5_CollisionShape" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0/Object_5_StaticBody" index="1" unique_id=1699991458 groups=["no_climb"]]
+
+[node name="Object_6_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="2" unique_id=240384682]
+collision_layer = 2
+
+[node name="Object_7_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="3" unique_id=1649194163]
+collision_layer = 2
+
+[node name="Object_8_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="4" unique_id=1418374210]
+collision_layer = 2
+
+[node name="Object_9_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="5" unique_id=1964283868]
+collision_layer = 2
+
+[node name="Object_10_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="6" unique_id=246815706]
+collision_layer = 2
+
+[node name="Object_11_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="7" unique_id=629409442]
+collision_layer = 2
+
+[node name="Object_12_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="8" unique_id=67628142]
+collision_layer = 2
+
+[node name="Object_13_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="9" unique_id=191368230]
+collision_layer = 2
+
+[node name="Object_14_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="10" unique_id=1538852249]
+collision_layer = 2
+
+[node name="Object_15_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="11" unique_id=1133550318]
+collision_layer = 2
+
+[node name="Object_16_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="12" unique_id=1226241760]
+collision_layer = 2
+
+[node name="Object_17_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="13" unique_id=1333568600]
+collision_layer = 2
+
+[node name="Object_18_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="14" unique_id=31225892]
+collision_layer = 2
+
+[node name="Object_19_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="15" unique_id=120484085]
+collision_layer = 2
+
+[node name="Object_20_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/root/GLTF_SceneRootNode/Plane_0" parent_id_path=PackedInt32Array(2135188629, 1287360262) index="16" unique_id=1686621631]
+collision_layer = 2
+
+[editable path="Sketchfab_Scene"]

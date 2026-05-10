@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsdkophg4p62h"
+path="res://.godot/imported/block-snow-low-long.obj-3bc8879316b0a887eb6284b20c1085fe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/block-snow-low-long.obj-3bc8879316b0a887eb6284b20c1085fe.mesh"]
+
+source_file="res://Models/Shapey/kenney_platformer-kit/Models/OBJ format/block-snow-low-long.obj"
+dest_files=["res://.godot/imported/block-snow-low-long.obj-3bc8879316b0a887eb6284b20c1085fe.mesh", "res://.godot/imported/block-snow-low-long.obj-3bc8879316b0a887eb6284b20c1085fe.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

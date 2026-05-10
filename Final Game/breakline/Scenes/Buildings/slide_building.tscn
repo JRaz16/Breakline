@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cpvy5qnl7b50m"]
+
+[ext_resource type="Material" uid="uid://23ptjp877e58" path="res://Materials/painted_plaster_wall.res" id="1_mixuy"]
+[ext_resource type="Material" uid="uid://b04sxnhos5fvh" path="res://Materials/concrete_tiles_02.res" id="2_qpc52"]
+[ext_resource type="Material" uid="uid://fdx6yjtfayq3" path="res://Materials/MetalPlates_008.tres" id="3_pxwna"]
+[ext_resource type="Material" uid="uid://dp2iwbk6t6n6n" path="res://Materials/Metal_028.tres" id="4_1jtcd"]
+[ext_resource type="Material" uid="uid://db0hox3jwesrf" path="res://Materials/Tiles_072.tres" id="5_sfj8a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6k3k"]
+size = Vector3(40, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7wym"]
+size = Vector3(1, 2.5, 38)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4r73d"]
+size = Vector3(40, 405, 40)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ryix3"]
+points = PackedVector3Array(-39, 0, 0, 1, 20, 0, 1, 0, 0, -39, 0, 40, 1, 20, 40, 1, 0, 40)
+
+[node name="Slide Building" type="StaticBody3D" unique_id=1318478258 groups=["forced_slide_roof"]]
+
+[node name="BuildingBase" type="CSGBox3D" parent="." unique_id=514926245]
+size = Vector3(40, 402.5, 40)
+material = ExtResource("1_mixuy")
+
+[node name="Rooftop" type="CSGBox3D" parent="." unique_id=591950545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+size = Vector3(38, 5, 38)
+material = ExtResource("2_qpc52")
+
+[node name="MetalRim" type="CSGBox3D" parent="." unique_id=1783053637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 0)
+size = Vector3(1, 2.5, 38)
+material = ExtResource("3_pxwna")
+
+[node name="MetalRim4" type="CSGBox3D" parent="." unique_id=449053491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, 19.5)
+size = Vector3(38, 2.5, 1)
+material = ExtResource("3_pxwna")
+
+[node name="MetalRim2" type="CSGBox3D" parent="." unique_id=569906991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 0)
+size = Vector3(1, 2.5, 38)
+material = ExtResource("3_pxwna")
+
+[node name="MetalRim3" type="CSGBox3D" parent="." unique_id=1476100058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, -19.5)
+size = Vector3(38, 2.5, 1)
+material = ExtResource("3_pxwna")
+
+[node name="MetalBox" type="CSGBox3D" parent="." unique_id=641439409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_1jtcd")
+
+[node name="MetalBox2" type="CSGBox3D" parent="." unique_id=504564830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, -19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_1jtcd")
+
+[node name="MetalBox3" type="CSGBox3D" parent="." unique_id=136375543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, -19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_1jtcd")
+
+[node name="MetalBox4" type="CSGBox3D" parent="." unique_id=1088375702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 19.5)
+size = Vector3(1, 2.5, 1)
+material = ExtResource("4_1jtcd")
+
+[node name="Rim Collision" type="CollisionShape3D" parent="." unique_id=985008783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, -19.5)
+shape = SubResource("BoxShape3D_d6k3k")
+debug_color = Color(0, 0.5950001, 0.7, 0.73333335)
+
+[node name="Rim Collision2" type="CollisionShape3D" parent="." unique_id=1794362241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 202.5, 19.5)
+shape = SubResource("BoxShape3D_d6k3k")
+debug_color = Color(0, 0.5950001, 0.7, 0.73333335)
+
+[node name="Rim Collision3" type="CollisionShape3D" parent="." unique_id=1233973073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 202.5, 0)
+shape = SubResource("BoxShape3D_p7wym")
+
+[node name="Rim Collision4" type="CollisionShape3D" parent="." unique_id=782125935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5, 202.5, 0)
+shape = SubResource("BoxShape3D_p7wym")
+
+[node name="Roof_Building Collision" type="CollisionShape3D" parent="." unique_id=21212172]
+shape = SubResource("BoxShape3D_4r73d")
+
+[node name="Slant" type="CSGPolygon3D" parent="." unique_id=23091432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.00141, 203.75826, 19.956745)
+polygon = PackedVector2Array(-39, 0, 1, 0, 1, 20)
+depth = 40.0
+material = ExtResource("5_sfj8a")
+
+[node name="roof collision" type="CollisionShape3D" parent="." unique_id=1480480556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.995665, 203.7544, -19.980398)
+shape = SubResource("ConvexPolygonShape3D_ryix3")
+debug_color = Color(0, 0.6, 0.69803923, 1)

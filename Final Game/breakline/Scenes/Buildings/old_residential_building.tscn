@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dsx2f6nvh0jkg"]
+
+[ext_resource type="PackedScene" uid="uid://bnnh6g8aqhskf" path="res://Models/buildings/Old Residential/old_residential_building_4k.glb" id="1_jrsq5"]
+
+[node name="Old Residential Building" type="Node3D" unique_id=143068729]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1353326242 instance=ExtResource("1_jrsq5")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.0067749023, 0, -0.066111565)
+
+[node name="zgrada_base_uv_main_building_m_main_building_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/zgrada_base_uv_main_building" parent_id_path=PackedInt32Array(1353326242, 2124224762) index="0" unique_id=587390676]
+collision_layer = 2
+
+[node name="b1_doors_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_doors" parent_id_path=PackedInt32Array(1353326242, 237122226) index="0" unique_id=1233682677]
+collision_layer = 2
+
+[node name="b1_med_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_med_windows" parent_id_path=PackedInt32Array(1353326242, 787092114) index="0" unique_id=268934746]
+collision_layer = 2
+
+[node name="b1_thin_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_thin_windows" parent_id_path=PackedInt32Array(1353326242, 138595803) index="0" unique_id=651890600]
+collision_layer = 2
+
+[node name="b1_small_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_small_windows" parent_id_path=PackedInt32Array(1353326242, 1408752110) index="0" unique_id=1290539381]
+collision_layer = 2
+
+[node name="b1_stairs_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_stairs_windows" parent_id_path=PackedInt32Array(1353326242, 349613600) index="0" unique_id=52485529]
+collision_layer = 2
+
+[node name="b1_shutter_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_shutter_windows" parent_id_path=PackedInt32Array(1353326242, 1422078291) index="0" unique_id=127838753]
+collision_layer = 2
+
+[node name="b1_balcony_windows_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_balcony_windows" parent_id_path=PackedInt32Array(1353326242, 303739102) index="0" unique_id=11857983]
+collision_layer = 2
+
+[node name="b1_balcony_glass_m_building_windows_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_balcony_glass" parent_id_path=PackedInt32Array(1353326242, 2008402543) index="0" unique_id=774604804]
+collision_layer = 2
+
+[node name="b1_ac_details_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_ac_details" parent_id_path=PackedInt32Array(1353326242, 2073800564) index="0" unique_id=2013513789]
+collision_layer = 2
+
+[node name="b1_ac_details_m_building_details_02_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_ac_details" parent_id_path=PackedInt32Array(1353326242, 2073800564) index="1" unique_id=34879122]
+collision_layer = 2
+
+[node name="b1_bunker_entrance_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_bunker_entrance" parent_id_path=PackedInt32Array(1353326242, 687311168) index="0" unique_id=239185675]
+collision_layer = 2
+
+[node name="b1_entrance_camera_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_entrance_camera" parent_id_path=PackedInt32Array(1353326242, 1646480636) index="0" unique_id=1345639514]
+collision_layer = 2
+
+[node name="b1_entrance_pipe_cage_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_entrance_pipe_cage" parent_id_path=PackedInt32Array(1353326242, 809180383) index="0" unique_id=658596916]
+collision_layer = 2
+
+[node name="b1_gas_box_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_gas_box" parent_id_path=PackedInt32Array(1353326242, 556257080) index="0" unique_id=1061213161]
+collision_layer = 2
+
+[node name="b1_door_handles_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_door_handles" parent_id_path=PackedInt32Array(1353326242, 2041464454) index="0" unique_id=1377529082]
+collision_layer = 2
+
+[node name="b1_light_pole_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_light_pole" parent_id_path=PackedInt32Array(1353326242, 1032084553) index="0" unique_id=862244865]
+collision_layer = 2
+
+[node name="b1_kitchen_ventilation_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_kitchen_ventilation" parent_id_path=PackedInt32Array(1353326242, 1193791918) index="0" unique_id=1756955848]
+collision_layer = 2
+
+[node name="b1_entrance_pipes_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_entrance_pipes" parent_id_path=PackedInt32Array(1353326242, 1395837649) index="0" unique_id=1180938781]
+collision_layer = 2
+
+[node name="b1_staircase_m_building_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_staircase" parent_id_path=PackedInt32Array(1353326242, 227037198) index="0" unique_id=176788398]
+collision_layer = 2
+
+[node name="zgrada2_krov_uv_roof_m_building_roof_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/zgrada2_krov_uv_roof" parent_id_path=PackedInt32Array(1353326242, 701772761) index="0" unique_id=202589047]
+collision_layer = 2
+
+[node name="zgrada2_krov_uv_roof_m_main_building_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/zgrada2_krov_uv_roof" parent_id_path=PackedInt32Array(1353326242, 701772761) index="1" unique_id=1914084388]
+collision_layer = 2
+
+[node name="zgrada2_krov_pokrov_uv_roof_m_building_roof_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/zgrada2_krov_pokrov_uv_roof" parent_id_path=PackedInt32Array(1353326242, 2023074241) index="0" unique_id=1099922793]
+collision_layer = 2
+
+[node name="b1_roof_details_m_roof_details_0_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_roof_details" parent_id_path=PackedInt32Array(1353326242, 480545955) index="0" unique_id=1163627053]
+collision_layer = 2
+
+[node name="b1_roof_details_m_roof_details_02_StaticBody" parent="Sketchfab_Scene/Sketchfab_model/old_residential_building_fbx/RootNode/b1_roof_details" parent_id_path=PackedInt32Array(1353326242, 480545955) index="1" unique_id=955335454]
+collision_layer = 2
+
+[editable path="Sketchfab_Scene"]

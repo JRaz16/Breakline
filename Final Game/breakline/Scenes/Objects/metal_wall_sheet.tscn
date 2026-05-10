@@ -1,0 +1,71 @@
+[gd_scene format=4 uid="uid://b6p6xpxoth3gr"]
+
+[ext_resource type="Texture2D" uid="uid://dd8kdg7jq3ncl" path="res://Models/metal_sheet/metal_sheet_roof_new__old__part-1_3.png" id="1_r5g1q"]
+[ext_resource type="Texture2D" uid="uid://d2vpy0w54p4qw" path="res://Models/metal_sheet/metal_sheet_roof_new__old__part-1_4.png" id="2_24xcu"]
+[ext_resource type="Texture2D" uid="uid://bjky87tvrvtu6" path="res://Models/metal_sheet/metal_sheet_roof_new__old__part-1_5.png" id="3_6wrk4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvmaf"]
+resource_name = "MSRoof1_Old"
+cull_mode = 2
+albedo_texture = ExtResource("1_r5g1q")
+metallic = 1.0
+metallic_texture = ExtResource("2_24xcu")
+metallic_texture_channel = 2
+roughness = 0.4
+roughness_texture = ExtResource("2_24xcu")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_6wrk4")
+ao_enabled = true
+ao_texture = ExtResource("2_24xcu")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qu5u7"]
+_surfaces = [{
+"aabb": AABB(-0.4982925, -0.0005, -1, 0.996585, 0.001, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAACAAQAAQAFAAMAAQAAAAUAAgADAAYABAACAAYABgADAAUAAAAEAAcABAAGAAcAAAAHAAUABgAFAAcA"),
+"name": "MSRoof1_Old",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAAAAAAD//wAAAAD//wAAAAD//wAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_012fe"]
+resource_name = "Sketchfab_Scene_MetalSheetRoof1_Old_MSRoof1_Old_0"
+_surfaces = [{
+"aabb": AABB(-0.4982925, -0.0005, -1, 0.996585, 0.001, 2),
+"attribute_data": PackedByteArray("SADX/0gA1/+wf9f/sH/X/7B/JwCwfycASAAnAEgAJwDxfycA8X8nAPF/1//xf9f/Wv/X/1r/1/9a/ycAWv8nALB/JwCwfycAsH/X/7B/1//xf9f/8X/X//F/JwDxfycAsH/X/7B/1/9IANf/SADX/0gA+P9IAPj/sH/4/7B/+P9IANf/SADX/0gAJwBIACcABgAnAAYAJwAGANf/BgDX/0gAJwBIACcAsH8nALB/JwCwfwYAsH8GAEgABgBIAAYA"),
+"format": 34896613431,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_nvmaf"),
+"name": "MSRoof1_Old",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA//8AAAAAAAD//wAAAAD///////8AAP////8AAP//////vwAA//8AAP+//////wAA/7//////////vwAAAAD//1jVAAAAAAAAWNUAAP//AABY1QAA/////1jVAAAAAAAA/////wAAAAD///////8AAP//AAD//wAA/////wAAAABP1f//AAD//0/V////////T9X/////AABQ1f//AAD/////AAAAAP////8AAP///////////////////3//P/9//z//f/8//3//P////3////9/////f////39Z1VHVWdVR1VnVUdVZ1VHV/3////9//v//f////3///6eqT1Wmqk5Vp6pPVaeqT1X/f/9//3//f/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qu5u7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r5g1q"]
+size = Vector3(3.682, 0.07910156, 8.106)
+
+[node name="metal_wall_sheet" type="Node3D" unique_id=1268890517]
+
+[node name="MetalSheetRoof1_Old" type="Node3D" parent="." unique_id=226342612]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, 3, 0, -3, -1.3113416e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MetalSheetRoof1_Old" unique_id=511184105]
+collision_layer = 2
+
+[node name="MetalSheetRoof1_Old_MSRoof1_Old_0" type="MeshInstance3D" parent="MetalSheetRoof1_Old/StaticBody3D" unique_id=1083668222]
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.35, 2.3354173, -1.4673508, 0.017686844)
+mesh = SubResource("ArrayMesh_012fe")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="MetalSheetRoof1_Old/StaticBody3D" unique_id=492903100]
+transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, -2.4868996e-14, 0, 2.4868996e-14, 0.33333334, 2.331581, -1.4596529, 0.005153656)
+shape = SubResource("BoxShape3D_r5g1q")

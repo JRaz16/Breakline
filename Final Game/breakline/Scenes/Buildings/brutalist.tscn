@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://3gk6jtni5iq6"]
+
+[ext_resource type="PackedScene" uid="uid://bbcjvf4xlut4c" path="res://Models/buildings/Brutalist/building_brutalist_array.glb" id="1_wag1n"]
+
+[node name="Brutalist" type="Node3D" unique_id=1507971361]
+
+[node name="Sketchfab_Scene" parent="." unique_id=2086559275 instance=ExtResource("1_wag1n")]
